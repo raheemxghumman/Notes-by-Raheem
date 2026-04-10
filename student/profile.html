@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - NotesByRaheem.xyz</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/pages/dashboard.css">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="profile-page">
+    <header class="dashboard-header">
+        <div class="container">
+            <nav class="dashboard-nav">
+                <div class="nav-brand">
+                    <a href="../index.html" class="logo-link">
+                        <i class="fas fa-book-open"></i>
+                        <span>NotesByRaheem</span>
+                    </a>
+                </div>
+                
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li class="nav-item">
+                            <a href="dashboard.html" class="nav-link">
+                                <i class="fas fa-home"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="browse.html" class="nav-link">
+                                <i class="fas fa-search"></i>
+                                <span>Browse Notes</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="upload.html" class="nav-link">
+                                <i class="fas fa-upload"></i>
+                                <span>Upload</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="my-uploads.html" class="nav-link">
+                                <i class="fas fa-history"></i>
+                                <span>My Uploads</span>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="profile.html" class="nav-link">
+                                <i class="fas fa-user"></i>
+                                <span>Profile</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-user">
+                    <div class="user-dropdown">
+                        <button class="user-toggle">
+                            <div class="user-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <span class="user-name">Student User</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="profile.html" class="dropdown-item">
+                                <i class="fas fa-user-cog"></i> Profile Settings
+                            </a>
+                            <a href="settings.html" class="dropdown-item">
+                                <i class="fas fa-cog"></i> Account Settings
+                            </a>
+                            <button id="logout-btn" class="dropdown-item logout">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="profile-main">
+        <div class="container">
+            <div class="page-header">
+                <h1>Profile Settings</h1>
+                <p class="page-subtitle">Manage your personal information and account settings</p>
+            </div>
+
+            <div class="profile-grid">
+                <div class="profile-sidebar">
+                    <div class="profile-card">
+                        <div class="profile-avatar">
+                            <div class="avatar-placeholder">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <button class="avatar-change-btn">
+                                <i class="fas fa-camera"></i> Change
+                            </button>
+                        </div>
+                        <div class="profile-info">
+                            <h3 class="profile-name">Student User</h3>
+                            <p class="profile-role">
+                                <i class="fas fa-user-graduate"></i> Student Account
+                            </p>
+                            <p class="profile-joined">
+                                <i class="fas fa-calendar-alt"></i> Joined: March 2024
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-stats">
+                        <h4>Account Statistics</h4>
+                        <div class="stats-list">
+                            <div class="stat-item">
+                                <span class="stat-label">Total Uploads</span>
+                                <span class="stat-value">12</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Approved Notes</span>
+                                <span class="stat-value">8</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Total Downloads</span>
+                                <span class="stat-value">260</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Last Login</span>
+                                <span class="stat-value">Today, 09:15</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-content">
+                    <div class="profile-section">
+                        <h3>Personal Information</h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <label>Full Name</label>
+                                <p>Student User</p>
+                            </div>
+                            <div class="info-item">
+                                <label>Roll Number</label>
+                                <p>FA24-BCS-001</p>
+                            </div>
+                            <div class="info-item">
+                                <label>Email</label>
+                                <p>student@example.com</p>
+                            </div>
+                            <div class="info-item">
+                                <label>Semester</label>
+                                <p>4th Semester</p>
+                            </div>
+                            <div class="info-item">
+                                <label>Batch</label>
+                                <p>FA24</p>
+                            </div>
+                            <div class="info-item">
+                                <label>Account Type</label>
+                                <p>Student</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-section">
+                        <h3>Enrolled Courses</h3>
+                        <div class="courses-grid">
+                            <div class="course-item">
+                                <i class="fas fa-calculator"></i>
+                                <span>Multi-variable Calculus</span>
+                            </div>
+                            <div class="course-item">
+                                <i class="fas fa-code"></i>
+                                <span>Software Engineering</span>
+                            </div>
+                            <div class="course-item">
+                                <i class="fas fa-network-wired"></i>
+                                <span>Computer Networks</span>
+                            </div>
+                            <div class="course-item">
+                                <i class="fas fa-users"></i>
+                                <span>Civics & Community Engagement</span>
+                            </div>
+                            <div class="course-item">
+                                <i class="fas fa-paint-brush"></i>
+                                <span>Visual Programming</span>
+                            </div>
+                            <div class="course-item">
+                                <i class="fas fa-microchip"></i>
+                                <span>Computer Organization & Assembly Language</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-section">
+                        <h3>Account Security</h3>
+                        <div class="security-card">
+                            <p>For security reasons, password changes must be requested from the platform owner.</p>
+                            <button class="btn btn-primary" id="request-password-btn">
+                                <i class="fas fa-envelope"></i> Request Password Reset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="dashboard-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="../index.html" class="footer-logo">
+                        <i class="fas fa-book-open"></i>
+                        <span>NotesByRaheem</span>
+                    </a>
+                    <p class="footer-tagline">Your academic success partner</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Account</h4>
+                        <ul>
+                            <li><a href="dashboard.html">Dashboard</a></li>
+                            <li><a href="profile.html">Profile</a></li>
+                            <li><a href="settings.html">Settings</a></li>
+                            <li><a href="my-uploads.html">My Uploads</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="browse.html">Browse Notes</a></li>
+                            <li><a href="upload.html">Upload Notes</a></li>
+                            <li><a href="#">Guidelines</a></li>
+                            <li><a href="#">Help Center</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4>Platform</h4>
+                        <ul>
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2024 NotesByRaheem.xyz. Student access only.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/auth/auth.js"></script>
+    <script src="../js/components/dashboard.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Logout functionality
+            const logoutBtn = document.getElementById('logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function() {
+                    if (confirm('Are you sure you want to logout?')) {
+                        localStorage.removeItem('currentUser');
+                        sessionStorage.removeItem('currentUser');
+                        window.location.href = '../login.html';
+                    }
+                });
+            }
+            
+            // Request password reset
+            const requestPasswordBtn = document.getElementById('request-password-btn');
+            if (requestPasswordBtn) {
+                requestPasswordBtn.addEventListener('click', function() {
+                    alert('Password reset request sent to owner. You will receive new credentials via email.');
+                });
+            }
+            
+            // Check authentication
+            const currentUser = localStorage.getItem('currentUser') || sessionStorage.getItem('currentUser');
+            if (!currentUser) {
+                window.location.href = '../login.html';
+            } else {
+                try {
+                    const user = JSON.parse(currentUser);
+                    if (user.role !== 'student') {
+                        window.location.href = '../login.html';
+                    }
+                    
+                    // Update user name in header
+                    const userNameElement = document.querySelector('.user-name');
+                    if (userNameElement && user.username) {
+                        userNameElement.textContent = user.username;
+                    }
+                    
+                    // Update profile name
+                    const profileNameElement = document.querySelector('.profile-name');
+                    if (profileNameElement && user.username) {
+                        profileNameElement.textContent = user.username;
+                    }
+                } catch (e) {
+                    window.location.href = '../login.html';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

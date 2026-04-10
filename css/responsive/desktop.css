@@ -1,0 +1,95 @@
+/* Desktop Responsive Styles (min-width: 1024px) */
+
+@media (min-width: 1024px) {
+    /* General */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    /* Navigation */
+    .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+    }
+    
+    /* Hero Section */
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+    
+    .hero-stats {
+        display: flex;
+        gap: 3rem;
+    }
+    
+    .hero-buttons {
+        display: flex;
+        gap: 1rem;
+    }
+    
+    /* Courses Grid */
+    .courses-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Notes Grid */
+    .notes-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Share Section */
+    .share-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+    
+    /* About Section */
+    .about-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+    
+    /* Dashboard */
+    .dashboard-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .nav-menu {
+        display: flex;
+    }
+    
+    .nav-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+    
+    .actions-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .courses-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Footer */
+    .footer-content {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        gap: 3rem;
+    }
+    
+    .footer-links {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}

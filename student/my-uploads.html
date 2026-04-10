@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Uploads - NotesByRaheem.xyz</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/pages/dashboard.css">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="my-uploads-page">
+    <header class="dashboard-header">
+        <div class="container">
+            <nav class="dashboard-nav">
+                <div class="nav-brand">
+                    <a href="../index.html" class="logo-link">
+                        <i class="fas fa-book-open"></i>
+                        <span>NotesByRaheem</span>
+                    </a>
+                </div>
+                
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li class="nav-item">
+                            <a href="dashboard.html" class="nav-link">
+                                <i class="fas fa-home"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="browse.html" class="nav-link">
+                                <i class="fas fa-search"></i>
+                                <span>Browse Notes</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="upload.html" class="nav-link">
+                                <i class="fas fa-upload"></i>
+                                <span>Upload</span>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="my-uploads.html" class="nav-link">
+                                <i class="fas fa-history"></i>
+                                <span>My Uploads</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="profile.html" class="nav-link">
+                                <i class="fas fa-user"></i>
+                                <span>Profile</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-user">
+                    <div class="user-dropdown">
+                        <button class="user-toggle">
+                            <div class="user-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <span class="user-name">Student User</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="profile.html" class="dropdown-item">
+                                <i class="fas fa-user-cog"></i> Profile Settings
+                            </a>
+                            <a href="settings.html" class="dropdown-item">
+                                <i class="fas fa-cog"></i> Account Settings
+                            </a>
+                            <button id="logout-btn" class="dropdown-item logout">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="my-uploads-main">
+        <div class="container">
+            <div class="page-header">
+                <h1>My Uploads</h1>
+                <p class="page-subtitle">Track the status of your uploaded notes and view statistics</p>
+            </div>
+
+            <div class="uploads-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-file-upload"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Total Uploads</h3>
+                        <p class="stat-number">12</p>
+                        <p class="stat-desc">All time uploads</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Approved</h3>
+                        <p class="stat-number">8</p>
+                        <p class="stat-desc">Publicly available</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Pending</h3>
+                        <p class="stat-number">2</p>
+                        <p class="stat-desc">Awaiting review</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-times-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Rejected</h3>
+                        <p class="stat-number">2</p>
+                        <p class="stat-desc">Needs revision</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="uploads-tabs">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="all">All Uploads</button>
+                    <button class="tab-btn" data-tab="pending">Pending</button>
+                    <button class="tab-btn" data-tab="approved">Approved</button>
+                    <button class="tab-btn" data-tab="rejected">Rejected</button>
+                </div>
+                
+                <div class="tabs-content">
+                    <div class="tab-pane active" id="tab-all">
+                        <div class="uploads-table-container">
+                            <table class="uploads-table">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Course</th>
+                                        <th>Upload Date</th>
+                                        <th>Status</th>
+                                        <th>Downloads</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="note-title">
+                                                <i class="fas fa-file-pdf"></i>
+                                                <div>
+                                                    <strong>MVC Midterm Notes</strong>
+                                                    <small>Updated: 2 days ago</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Multi-variable Calculus</td>
+                                        <td>2024-03-15</td>
+                                        <td>
+                                            <span class="status-badge approved">Approved</span>
+                                        </td>
+                                        <td>47</td>
+                                        <td>
+                                            <button class="btn-action" title="View">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn-action" title="Download">
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                            <button class="btn-action" title="Share">
+                                                <i class="fas fa-share-alt"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>
+                                            <div class="note-title">
+                                                <i class="fas fa-file-word"></i>
+                                                <div>
+                                                    <strong>SE Assignment Solution</strong>
+                                                    <small>Updated: 1 week ago</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Software Engineering</td>
+                                        <td>2024-03-10</td>
+                                        <td>
+                                            <span class="status-badge pending">Pending</span>
+                                        </td>
+                                        <td>0</td>
+                                        <td>
+                                            <button class="btn-action" title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn-action" title="Delete">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>
+                                            <div class="note-title">
+                                                <i class="fas fa-file-powerpoint"></i>
+                                                <div>
+                                                    <strong>CN Presentation Slides</strong>
+                                                    <small>Updated: 3 weeks ago</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Computer Networks</td>
+                                        <td>2024-02-28</td>
+                                        <td>
+                                            <span class="status-badge approved">Approved</span>
+                                        </td>
+                                        <td>89</td>
+                                        <td>
+                                            <button class="btn-action" title="View">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn-action" title="Download">
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                            <button class="btn-action" title="Share">
+                                                <i class="fas fa-share-alt"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>
+                                            <div class="note-title">
+                                                <i class="fas fa-file-image"></i>
+                                                <div>
+                                                    <strong>CCE Lecture Notes</strong>
+                                                    <small>Updated: 1 month ago</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Civics & Community Engagement</td>
+                                        <td>2024-02-15</td>
+                                        <td>
+                                            <span class="status-badge rejected">Rejected</span>
+                                        </td>
+                                        <td>0</td>
+                                        <td>
+                                            <button class="btn-action" title="View Reason">
+                                                <i class="fas fa-info-circle"></i>
+                                            </button>
+                                            <button class="btn-action" title="Re-upload">
+                                                <i class="fas fa-redo"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>
+                                            <div class="note-title">
+                                                <i class="fas fa-file-pdf"></i>
+                                                <div>
+                                                    <strong>VP Lab Manual</strong>
+                                                    <small>Updated: 1 month ago</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Visual Programming</td>
+                                        <td>2024-02-10</td>
+                                        <td>
+                                            <span class="status-badge approved">Approved</span>
+                                        </td>
+                                        <td>124</td>
+                                        <td>
+                                            <button class="btn-action" title="View">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn-action" title="Download">
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                            <button class="btn-action" title="Share">
+                                                <i class="fas fa-share-alt"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="tab-pending">
+                        <div class="empty-state">
+                            <i class="fas fa-clock fa-3x"></i>
+                            <h3>No Pending Uploads</h3>
+                            <p>You don't have any notes awaiting approval at the moment.</p>
+                            <a href="upload.html" class="btn btn-primary">
+                                <i class="fas fa-upload"></i> Upload New Notes
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="tab-approved">
+                        <div class="empty-state">
+                            <i class="fas fa-check-circle fa-3x"></i>
+                            <h3>Approved Notes</h3>
+                            <p>View all your approved notes in the "All Uploads" tab.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="tab-rejected">
+                        <div class="empty-state">
+                            <i class="fas fa-times-circle fa-3x"></i>
+                            <h3>No Rejected Notes</h3>
+                            <p>Great! You don't have any rejected notes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="uploads-actions">
+                <div class="action-card">
+                    <h3>Need Help?</h3>
+                    <p>If your note was rejected, check the rejection reason and re-upload with corrections.</p>
+                    <p>For pending notes, typical approval time is 24-48 hours.</p>
+                    <div class="action-buttons">
+                        <a href="upload.html" class="btn btn-primary">
+                            <i class="fas fa-upload"></i> Upload New Note
+                        </a>
+                        <button class="btn btn-secondary" id="refresh-btn">
+                            <i class="fas fa-sync-alt"></i> Refresh Status
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="dashboard-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="../index.html" class="footer-logo">
+                        <i class="fas fa-book-open"></i>
+                        <span>NotesByRaheem</span>
+                    </a>
+                    <p class="footer-tagline">Empowering students through shared knowledge</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Student Resources</h4>
+                        <ul>
+                            <li><a href="dashboard.html">Dashboard</a></li>
+                            <li><a href="browse.html">Browse Notes</a></li>
+                            <li><a href="upload.html">Upload Notes</a></li>
+                            <li><a href="my-uploads.html">My Uploads</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="../contact.html">Contact Us</a></li>
+                            <li><a href="../about.html">About Platform</a></li>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4>Courses</h4>
+                        <ul>
+                            <li>Multi-variable Calculus</li>
+                            <li>Software Engineering</li>
+                            <li>Computer Networks</li>
+                            <li>Civics & Community Engagement</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2024 NotesByRaheem.xyz. Student access only.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/auth/auth.js"></script>
+    <script src="../js/components/dashboard.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab switching functionality
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Update active tab button
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show corresponding tab pane
+                    tabPanes.forEach(pane => {
+                        pane.classList.remove('active');
+                        if (pane.id === `tab-${tabId}`) {
+                            pane.classList.add('active');
+                        }
+                    });
+                });
+            });
+            
+            // Logout functionality
+            const logoutBtn = document.getElementById('logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function() {
+                    if (confirm('Are you sure you want to logout?')) {
+                        localStorage.removeItem('currentUser');
+                        sessionStorage.removeItem('currentUser');
+                        window.location.href = '../login.html';
+                    }
+                });
+            }
+            
+            // Refresh button
+            const refreshBtn = document.getElementById('refresh-btn');
+            if (refreshBtn) {
+                refreshBtn.addEventListener('click', function() {
+                    this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Refreshing...';
+                    this.disabled = true;
+                    
+                    setTimeout(() => {
+                        this.innerHTML = '<i class="fas fa-sync-alt"></i> Refresh Status';
+                        this.disabled = false;
+                        alert('Status refreshed!');
+                    }, 1500);
+                });
+            }
+            
+            // Action buttons
+            const actionButtons = document.querySelectorAll('.btn-action');
+            actionButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const title = this.getAttribute('title');
+                    alert(`${title} action clicked (simulated)`);
+                });
+            });
+            
+            // Check authentication
+            const currentUser = localStorage.getItem('currentUser') || sessionStorage.getItem('currentUser');
+            if (!currentUser) {
+                window.location.href = '../login.html';
+            } else {
+                try {
+                    const user = JSON.parse(currentUser);
+                    if (user.role !== 'student') {
+                        window.location.href = '../login.html';
+                    }
+                    
+                    // Update user name in header
+                    const userNameElement = document.querySelector('.user-name');
+                    if (userNameElement && user.username) {
+                        userNameElement.textContent = user.username;
+                    }
+                } catch (e) {
+                    window.location.href = '../login.html';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

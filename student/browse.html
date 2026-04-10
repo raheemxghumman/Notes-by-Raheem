@@ -325,37 +325,20 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="../js/auth/auth.js"></script>
+    <script src="../js/components/browse.js"></script>
     <script>
-        // Check if user is logged in
+        // Initialize authentication and browse functionality
         document.addEventListener('DOMContentLoaded', function() {
-            // Check authentication
-            const currentUser = JSON.parse(localStorage.getItem('currentUser') || sessionStorage.getItem('currentUser'));
-            
-            if (!currentUser || currentUser.role !== 'student') {
-                window.location.href = '../login.html';
-                return;
+            // Initialize authentication for student role
+            if (typeof initAuth === 'function') {
+                initAuth('student');
             }
             
-            // Update user name
-            const userNameElements = document.querySelectorAll('.user-name');
-            userNameElements.forEach(el => {
-                el.textContent = currentUser.name || 'Student User';
-            });
-            
-            // Logout functionality
-            document.getElementById('logout-btn').addEventListener('click', function() {
-                localStorage.removeItem('currentUser');
-                sessionStorage.removeItem('currentUser');
-                window.location.href = '../login.html';
-            });
-            
-            // Mobile menu toggle
-            const mobileToggle = document.querySelector('.mobile-menu-toggle');
-            const navMenu = document.querySelector('.nav-menu');
-            
-            mobileToggle.addEventListener('click', function() {
-                navMenu.classList.toggle('active');
-            });
+            // Initialize browse page functionality
+            if (typeof initBrowsePage === 'function') {
+                initBrowsePage();
+            }
         });
     </script>
 </body>

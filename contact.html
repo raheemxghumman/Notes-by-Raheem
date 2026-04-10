@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - NotesByRaheem.xyz</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pages/home.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="contact-page">
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">📚 NotesByRaheem</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="login.html" class="btn-login">Login</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="contact-main">
+        <div class="container">
+            <div class="contact-header">
+                <h1>Contact Us</h1>
+                <p class="subtitle">Get in touch with us for any questions, feedback, or support</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <h3>Owner Contact</h3>
+                        <p class="contact-detail">
+                            <i class="fas fa-user"></i> <strong>Raheem</strong>
+                        </p>
+                        <p class="contact-detail">
+                            <i class="fas fa-envelope"></i> <strong>raheem@notesbyraheem.xyz</strong>
+                        </p>
+                        <p class="contact-detail">
+                            <i class="fas fa-phone"></i> <strong>+92 XXX XXXXXXX</strong>
+                        </p>
+                        <p class="contact-detail">
+                            <i class="fas fa-clock"></i> <strong>Response Time: 24-48 hours</strong>
+                        </p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <h3>Platform Information</h3>
+                        <p>This platform is maintained by Raheem for 4th semester students at FAST NUCES.</p>
+                        <p>If you're a student and need access, contact Raheem directly for credentials.</p>
+                        <p>For technical issues or feature requests, use the contact form.</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Security & Privacy</h3>
+                        <p>Your data is secure with us. We don't share your information with third parties.</p>
+                        <p>All uploaded notes go through admin approval before being made public.</p>
+                        <p>For privacy concerns, contact the owner directly.</p>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <div class="contact-form-card">
+                        <h2>Send us a Message</h2>
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="" disabled selected>Select a subject</option>
+                                    <option value="access">Request Access</option>
+                                    <option value="bug">Report a Bug</option>
+                                    <option value="feature">Feature Request</option>
+                                    <option value="content">Content Issue</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="6" placeholder="Type your message here..." required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="newsletter" name="newsletter">
+                                    <label for="newsletter">Subscribe to platform updates (optional)</label>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                        
+                        <div class="form-note">
+                            <p><i class="fas fa-info-circle"></i> We typically respond within 24-48 hours.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>How do I get access to upload notes?</h3>
+                        <p>Contact Raheem directly with your student information. You'll receive manual credentials for login.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>How long does note approval take?</h3>
+                        <p>Notes are typically reviewed within 24 hours by the admin team.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Can I download notes without an account?</h3>
+                        <p>No, you need to be a registered student to access and download notes.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>What file formats are supported?</h3>
+                        <p>We support PDF, DOC, DOCX, PPT, PPTX, and image files (JPG, PNG).</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Is there a file size limit?</h3>
+                        <p>Yes, the maximum file size is 50MB per upload.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Can I delete my uploaded notes?</h3>
+                        <p>You can delete notes that are still pending approval. Once approved, contact admin for removal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html">📚 NotesByRaheem</a>
+                    <p class="tagline">Sharing knowledge, one note at a time</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-courses">
+                    <h4>Courses</h4>
+                    <ul>
+                        <li>Multi-variable Calculus</li>
+                        <li>Software Engineering</li>
+                        <li>Computer Networks</li>
+                        <li>Civics & Community Engagement</li>
+                        <li>Visual Programming</li>
+                        <li>Computer Organization & Assembly Language</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                    <p class="copyright">© 2024 NotesByRaheem.xyz. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navLinks.classList.toggle('show');
+                });
+            }
+            
+            // Contact form submission
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const subject = document.getElementById('subject').value;
+                    const message = document.getElementById('message').value;
+                    
+                    // Simple validation
+                    if (!name || !email || !subject || !message) {
+                        alert('Please fill in all required fields.');
+                        return;
+                    }
+                    
+                    // Simulate form submission
+                    alert(`Thank you, ${name}! Your message has been sent. We'll respond to ${email} within 24-48 hours.`);
+                    contactForm.reset();
+                });
+            }
+            
+            // Update active nav link
+            const currentPage = window.location.pathname.split('/').pop();
+            const navItems = document.querySelectorAll('.nav-links a');
+            navItems.forEach(item => {
+                if (item.getAttribute('href') === currentPage) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
