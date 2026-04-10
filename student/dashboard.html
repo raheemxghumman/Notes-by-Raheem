@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - NotesByRaheem.xyz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/pages/dashboard.css">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+</head>
+<body class="dashboard-page">
+    <!-- Navigation Header -->
+    <header class="dashboard-header">
+        <div class="container">
+            <nav class="dashboard-nav">
+                <div class="nav-brand">
+                    <a href="../index.html" class="logo-link">
+                        <i class="fas fa-book-open logo-icon"></i>
+                        <span class="logo-text">NotesBy<span class="logo-domain">Raheem.xyz</span></span>
+                    </a>
+                </div>
+                
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li class="nav-item active">
+                            <a href="dashboard.html" class="nav-link">
+                                <i class="fas fa-home"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="browse.html" class="nav-link">
+                                <i class="fas fa-search"></i>
+                                <span>Browse Notes</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="upload.html" class="nav-link">
+                                <i class="fas fa-upload"></i>
+                                <span>Upload Notes</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="my-notes.html" class="nav-link">
+                                <i class="fas fa-file-alt"></i>
+                                <span>My Notes</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-user">
+                    <div class="user-dropdown">
+                        <button class="user-toggle">
+                            <div class="user-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <span class="user-name">Student User</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="profile.html" class="dropdown-item">
+                                <i class="fas fa-user"></i>
+                                <span>My Profile</span>
+                            </a>
+                            <a href="settings.html" class="dropdown-item">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <button id="logout-btn" class="dropdown-item logout">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Logout</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+        <div class="container">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <div class="welcome-card">
+                    <div class="welcome-content">
+                        <h1 class="welcome-title">Welcome back, Student!</h1>
+                        <p class="welcome-text">
+                            You have access to notes for all 4th semester courses. 
+                            Browse, upload, or manage your notes below.
+                        </p>
+                        <div class="welcome-stats">
+                            <div class="stat-item">
+                                <div class="stat-value">12</div>
+                                <div class="stat-label">Notes Uploaded</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">8</div>
+                                <div class="stat-label">Notes Approved</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">4</div>
+                                <div class="stat-label">Pending Review</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="welcome-image">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Actions -->
+            <section class="quick-actions-section">
+                <h2 class="section-title">Quick Actions</h2>
+                <div class="actions-grid">
+                    <a href="upload.html" class="action-card primary">
+                        <div class="action-icon">
+                            <i class="fas fa-upload"></i>
+                        </div>
+                        <h3 class="action-title">Upload New Notes</h3>
+                        <p class="action-description">
+                            Share your notes with classmates. Upload PDFs, images, or documents.
+                        </p>
+                    </a>
+                    
+                    <a href="browse.html" class="action-card secondary">
+                        <div class="action-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3 class="action-title">Browse Notes</h3>
+                        <p class="action-description">
+                            Find notes by course, topic, or upload date. Filter by your needs.
+                        </p>
+                    </a>
+                    
+                    <a href="my-notes.html" class="action-card accent">
+                        <div class="action-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3 class="action-title">Manage My Notes</h3>
+                        <p class="action-description">
+                            View, edit, or delete your uploaded notes. Check approval status.
+                        </p>
+                    </a>
+                    
+                    <a href="profile.html" class="action-card success">
+                        <div class="action-icon">
+                            <i class="fas fa-user-edit"></i>
+                        </div>
+                        <h3 class="action-title">Update Profile</h3>
+                        <p class="action-description">
+                            Keep your information current. Change password or contact details.
+                        </p>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Course Overview -->
+            <section class="courses-section">
+                <h2 class="section-title">Your 4th Semester Courses</h2>
+                <div class="courses-grid">
+                    <div class="course-card mvc">
+                        <div class="course-header">
+                            <div class="course-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <h3 class="course-title">Multi-variable Calculus</h3>
+                        </div>
+                        <div class="course-stats">
+                            <div class="stat">
+                                <span class="stat-number">24</span>
+                                <span class="stat-label">Notes Available</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">5</span>
+                                <span class="stat-label">Your Uploads</span>
+                            </div>
+                        </div>
+                        <a href="browse.html?course=mvc" class="course-link">
+                            Browse Notes <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="course-card se">
+                        <div class="course-header">
+                            <div class="course-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3 class="course-title">Software Engineering</h3>
+                        </div>
+                        <div class="course-stats">
+                            <div class="stat">
+                                <span class="stat-number">18</span>
+                                <span class="stat-label">Notes Available</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">3</span>
+                                <span class="stat-label">Your Uploads</span>
+                            </div>
+                        </div>
+                        <a href="browse.html?course=se" class="course-link">
+                            Browse Notes <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="course-card cn">
+                        <div class="course-header">
+                            <div class="course-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <h3 class="course-title">Computer Networks</h3>
+                        </div>
+                        <div class="course-stats">
+                            <div class="stat">
+                                <span class="stat-number">22</span>
+                                <span class="stat-label">Notes Available</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">2</span>
+                                <span class="stat-label">Your Uploads</span>
+                            </div>
+                        </div>
+                        <a href="browse.html?course=cn" class="course-link">
+                            Browse Notes <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="course-card cce">
+                        <div class="course-header">
+                            <div class="course-icon">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <h3 class="course-title">Civics & Community Engagement</h3>
+                        </div>
+                        <div class="course-stats">
+                            <div class="stat">
+                                <span class="stat-number">15</span>
+                                <span class="stat-label">Notes Available</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">1</span>
+                                <span class="stat-label">Your Uploads</span>
+                            </div>
+                        </div>
+                        <a href="browse.html?course=cce" class="course-link">
+                            Browse Notes <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="course-card vp">
+                        <div class="course-header">
+                            <div class="course-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <h3 class="course-title">Visual Programming</h3>
+                        </div>
+                        <div class="course-stats">
+                            <div class="stat">
+                                <span class="stat-number">20</span>
+                                <span class="stat-label">Notes Available</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">1</span>
+                                <span class="stat-label">Your Uploads</span>
+                            </div>
+                        </div>
+                        <a href="browse.html?course=vp" class="course-link">
+                            Browse Notes <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="course-card coal">
+                        <div class="course-header">
+                            <div class="course-icon">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <h3 class="course-title">Computer Organization & Assembly Language</h3>
+                        </div>
+                        <div class="course-stats">
+                            <div class="stat">
+                                <span class="stat-number">19</span>
+                                <span class="stat-label">Notes Available</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">0</span>
+                                <span class="stat-label">Your Uploads</span>
+                            </div>
+                        </div>
+                        <a href="browse.html?course=coal" class="course-link">
+                            Browse Notes <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Activity -->
+            <section class="activity-section">
+                <div class="section-header">
+                    <h2 class="section-title">Recent Activity</h2>
+                    <a href="activity.html" class="view-all-link">View All <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon success">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="activity-content">
+                            <h4 class="activity-title">Note Approved</h4>
+                            <p class="activity-description">
+                                "Software Engineering - Design Patterns" has been approved by Admin.
+                            </p>
+                            <span class="activity-time">2 hours ago</span>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon warning">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="activity-content">
+                            <h4 class="activity-title">Note Uploaded</h4>
+                            <p class="activity-description">
+                                You uploaded "Multi-variable Calculus - Partial Derivatives".
+                            </p>
+                            <span class="activity-time">1 day ago</span>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon primary">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div class="activity-content">
+                            <h4 class="activity-title">Note Downloaded</h4>
+                            <p class="activity-description">
+                                You downloaded "Computer Networks - TCP/IP Protocol Suite".
+                            </p>
+                            <span class="activity-time">2 days ago</span>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon accent">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="activity-content">
+                            <h4 class="activity-title">Note Rated</h4>
+                            <p class="activity-description">
+                                You rated "Visual Programming - GUI Design" 5 stars.
+                            </p>
+                            <span class="activity-time">3 days ago</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="../index.html" class="footer-logo">
+                        <i class="fas fa-book-open"></i>
+                        <span>NotesByRaheem.xyz</span>
+                    </a>
+                    <p class="footer-tagline">
+                        Your 4th semester notes sharing platform
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4 class="link-title">For Students</h4>
+                        <ul>
+                            <li><a href="browse.html">Browse Notes</a></li>
+                            <li><a href="upload.html">Upload Notes</a></li>
+                            <li><a href="my-notes.html">My Notes</a></li>
+                            <li><a href="profile.html">Profile</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4 class="link-title">Courses</h4>
+                        <ul>
+                            <li><a href="browse.html?course=mvc">Multi-variable Calculus</a></li>
+                            <li><a href="browse.html?course=se">Software Engineering</a></li>
+                            <li><a href="browse.html?course=cn">Computer Networks</a></li>
+                            <li><a href="browse.html?course=cce">Civics & Community Engagement</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4 class="link-title">Support</h4>
+                        <ul>
+                            <li><a href="../help.html">Help Center</a></li>
+                            <li><a href="../contact.html">Contact Us</a></li>
+                            <li><a href="../privacy.html">Privacy Policy</a></li>
+                            <li><a href="../terms.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">
+                    &copy; 2024 NotesByRaheem.xyz. All rights reserved.
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/auth/auth.js"></script>
+    <script src="../js/components/dashboard.js"></script>
+    <script>
+        // Check if user is logged in
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check authentication
+            const currentUser = JSON.parse(localStorage.getItem('currentUser') || sessionStorage.getItem('currentUser'));
+            
+            if (!currentUser || currentUser.role !== 'student') {
+                window.location.href = '../login.html';
+                return;
+            }
+            
+            // Update user name
+            const userNameElements = document.querySelectorAll('.user-name');
+            userNameElements.forEach(el => {
+                el.textContent = currentUser.name || 'Student User';
+            });
+            
+            // Logout functionality
+            document.getElementById('logout-btn').addEventListener('click', function() {
+                localStorage.removeItem('currentUser');
+                sessionStorage.removeItem('currentUser');
+                window.location.href = '../login.html';
+            });
+            
+            // Mobile menu toggle
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            mobileToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

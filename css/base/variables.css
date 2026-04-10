@@ -1,0 +1,149 @@
+/* 
+ * CSS Variables - NotesByRaheem.xyz
+ * Design system variables for consistent theming
+ */
+
+:root {
+    /* Primary Colors */
+    --primary-color: #4361ee;
+    --primary-dark: #3a56d4;
+    --primary-light: #6c8aff;
+    --primary-extra-light: #eef2ff;
+    
+    /* Secondary Colors */
+    --secondary-color: #7209b7;
+    --secondary-dark: #5a08a0;
+    --secondary-light: #9d4edd;
+    --secondary-extra-light: #f3e8ff;
+    
+    /* Accent Colors */
+    --accent-color: #f72585;
+    --accent-dark: #d9048e;
+    --accent-light: #ff70b8;
+    --accent-extra-light: #ffe4f1;
+    
+    /* Status Colors */
+    --success-color: #4cc9f0;
+    --success-dark: #38b2d0;
+    --success-light: #80dbfa;
+    --success-extra-light: #e3f8ff;
+    
+    --warning-color: #f8961e;
+    --warning-dark: #e07c0c;
+    --warning-light: #ffb347;
+    --warning-extra-light: #fff3e0;
+    
+    --danger-color: #f94144;
+    --danger-dark: #e03134;
+    --danger-light: #ff6b6b;
+    --danger-extra-light: #ffeaea;
+    
+    /* Neutral Colors */
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-400: #ced4da;
+    --gray-500: #adb5bd;
+    --gray-600: #6c757d;
+    --gray-700: #495057;
+    --gray-800: #343a40;
+    --gray-900: #212529;
+    
+    /* Course Specific Colors */
+    --course-mvc: #4361ee;      /* Multi-variable Calculus */
+    --course-se: #7209b7;       /* Software Engineering */
+    --course-cn: #4cc9f0;       /* Computer Networks */
+    --course-cce: #f8961e;      /* Civics & Community Engagement */
+    --course-vp: #f72585;       /* Visual Programming */
+    --course-coal: #38b000;     /* Computer Organization & Assembly Language */
+    
+    /* Typography */
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Roboto', sans-serif;
+    --font-mono: 'SF Mono', Monaco, 'Cascadia Mono', monospace;
+    
+    /* Font Sizes */
+    --text-xs: 0.75rem;     /* 12px */
+    --text-sm: 0.875rem;    /* 14px */
+    --text-base: 1rem;      /* 16px */
+    --text-lg: 1.125rem;    /* 18px */
+    --text-xl: 1.25rem;     /* 20px */
+    --text-2xl: 1.5rem;     /* 24px */
+    --text-3xl: 1.875rem;   /* 30px */
+    --text-4xl: 2.25rem;    /* 36px */
+    --text-5xl: 3rem;       /* 48px */
+    
+    /* Spacing */
+    --space-1: 0.25rem;     /* 4px */
+    --space-2: 0.5rem;      /* 8px */
+    --space-3: 0.75rem;     /* 12px */
+    --space-4: 1rem;        /* 16px */
+    --space-5: 1.25rem;     /* 20px */
+    --space-6: 1.5rem;      /* 24px */
+    --space-8: 2rem;        /* 32px */
+    --space-10: 2.5rem;     /* 40px */
+    --space-12: 3rem;       /* 48px */
+    --space-16: 4rem;       /* 64px */
+    --space-20: 5rem;       /* 80px */
+    
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-2xl: 24px;
+    --radius-full: 9999px;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.08);
+    --shadow-xl: 0 12px 30px rgba(0, 0, 0, 0.12);
+    --shadow-2xl: 0 20px 40px rgba(0, 0, 0, 0.15);
+    --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+    
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-normal: 300ms ease;
+    --transition-slow: 500ms ease;
+    --transition-bounce: 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Z-index layers */
+    --z-dropdown: 10;
+    --z-sticky: 20;
+    --z-fixed: 30;
+    --z-modal-backdrop: 40;
+    --z-modal: 50;
+    --z-popover: 60;
+    --z-tooltip: 70;
+    --z-toast: 80;
+    
+    /* Layout */
+    --header-height: 70px;
+    --sidebar-width: 280px;
+    --container-max-width: 1200px;
+    --container-padding: 20px;
+}
+
+/* Dark theme variables (optional) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --light-color: #121212;
+        --dark-color: #f8f9fa;
+        --gray-100: #1e1e1e;
+        --gray-200: #2d2d2d;
+        --gray-300: #3d3d3d;
+        --gray-400: #4d4d4d;
+        --gray-500: #6d6d6d;
+        --gray-600: #8d8d8d;
+        --gray-700: #adadad;
+        --gray-800: #cdcdcd;
+        --gray-900: #ededed;
+        
+        --primary-extra-light: #1a237e;
+        --secondary-extra-light: #311b92;
+        --accent-extra-light: #880e4f;
+    }
+}

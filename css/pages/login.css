@@ -1,0 +1,295 @@
+/* 
+ * Login Page Styles - NotesByRaheem.xyz
+ * Page-specific styles for login page
+ */
+
+/* Login page layout */
+.login-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--primary-extra-light) 0%, var(--secondary-extra-light) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-4);
+}
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+}
+
+.login-card {
+    background-color: white;
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-xl);
+    text-align: center;
+}
+
+/* Logo styles */
+.login-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+}
+
+.login-logo-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.login-logo-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+.login-logo-domain {
+    color: var(--secondary-color);
+}
+
+/* Header styles */
+.login-header h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-2);
+    color: var(--dark-color);
+}
+
+.login-header p {
+    color: var(--gray-600);
+    margin-bottom: var(--space-6);
+    font-size: 0.95rem;
+}
+
+/* Form styles */
+.login-form .form-group {
+    margin-bottom: var(--space-5);
+    text-align: left;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: var(--space-2);
+    font-weight: 500;
+    color: var(--gray-700);
+}
+
+.login-form .input-group {
+    position: relative;
+}
+
+.login-form input {
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+}
+
+.login-form input.error {
+    border-color: var(--danger-color);
+}
+
+.login-form .password-toggle {
+    position: absolute;
+    right: var(--space-3);
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--gray-500);
+    cursor: pointer;
+    padding: var(--space-1);
+    transition: color var(--transition-fast);
+}
+
+.login-form .password-toggle:hover {
+    color: var(--primary-color);
+}
+
+/* Remember me checkbox */
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-5);
+}
+
+.remember-me input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-color);
+}
+
+.remember-me label {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: var(--gray-600);
+}
+
+/* Submit button */
+.login-submit {
+    width: 100%;
+    padding: var(--space-3);
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+    margin-bottom: var(--space-5);
+}
+
+.login-submit:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.login-submit:active {
+    transform: translateY(0);
+}
+
+/* Error message */
+.error-message {
+    background-color: var(--danger-extra-light);
+    color: var(--danger-dark);
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-5);
+    text-align: left;
+    font-size: 0.9rem;
+    border-left: 4px solid var(--danger-color);
+}
+
+/* Role selector */
+.role-selector {
+    margin-bottom: var(--space-5);
+}
+
+.role-selector h3 {
+    font-size: 1rem;
+    margin-bottom: var(--space-3);
+    color: var(--gray-700);
+    text-align: left;
+}
+
+.role-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2);
+}
+
+.role-option {
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-md);
+    background-color: white;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.role-option:hover {
+    border-color: var(--primary-color);
+    background-color: var(--primary-extra-light);
+}
+
+.role-option.selected {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Sample accounts */
+.sample-accounts {
+    margin-top: var(--space-6);
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--gray-200);
+}
+
+.sample-accounts h3 {
+    font-size: 1rem;
+    margin-bottom: var(--space-3);
+    color: var(--gray-700);
+    text-align: left;
+}
+
+.sample-account {
+    background-color: var(--gray-100);
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-2);
+    text-align: left;
+    font-size: 0.85rem;
+    border-left: 3px solid var(--primary-color);
+}
+
+.sample-account strong {
+    color: var(--primary-color);
+}
+
+/* Footer links */
+.login-footer {
+    margin-top: var(--space-6);
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--gray-200);
+    font-size: 0.9rem;
+    color: var(--gray-600);
+}
+
+.login-footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .login-card {
+        padding: var(--space-6);
+    }
+    
+    .role-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .login-logo {
+        flex-direction: column;
+        gap: var(--space-2);
+    }
+    
+    .login-logo-text {
+        font-size: 1.5rem;
+    }
+}
+
+/* Animation for login card */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-card {
+    animation: fadeInUp 0.5s ease-out;
+}

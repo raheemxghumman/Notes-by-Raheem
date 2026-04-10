@@ -1,0 +1,611 @@
+/* 
+ * Browse Notes Page Styles - NotesByRaheem.xyz
+ * Page-specific styles for note browsing interface
+ */
+
+/* Browse page layout */
+.browse-page {
+    background-color: var(--gray-100);
+    min-height: 100vh;
+}
+
+.browse-main {
+    padding: var(--space-8) 0;
+}
+
+/* Page header */
+.page-header {
+    margin-bottom: var(--space-8);
+}
+
+.page-title {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-2);
+    color: var(--dark-color);
+}
+
+.page-subtitle {
+    color: var(--gray-600);
+    font-size: 1.1rem;
+    max-width: 600px;
+}
+
+/* Filter section */
+.filter-section {
+    background-color: white;
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--space-8);
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--space-6);
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    left: var(--space-4);
+    color: var(--gray-500);
+    font-size: 1.1rem;
+}
+
+#search-input {
+    flex: 1;
+    padding: var(--space-3) var(--space-4) var(--space-3) calc(var(--space-4) * 2 + 1.1rem);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    transition: border-color var(--transition-fast);
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+}
+
+.search-btn {
+    margin-left: var(--space-3);
+    padding: var(--space-3) var(--space-6);
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.search-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.filter-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.filter-group label {
+    font-weight: 500;
+    color: var(--gray-700);
+    white-space: nowrap;
+}
+
+.filter-group select {
+    padding: var(--space-2) var(--space-4);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-md);
+    background-color: white;
+    font-size: 0.95rem;
+    min-width: 180px;
+    cursor: pointer;
+    transition: border-color var(--transition-fast);
+}
+
+.filter-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.filter-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background-color: var(--gray-100);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-md);
+    color: var(--gray-700);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.filter-toggle:hover {
+    background-color: var(--gray-200);
+    border-color: var(--gray-400);
+}
+
+/* Notes grid section */
+.notes-grid-section {
+    margin-bottom: var(--space-8);
+}
+
+.notes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-6);
+}
+
+.notes-title {
+    font-size: 1.8rem;
+    color: var(--dark-color);
+}
+
+.notes-count {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+}
+
+.notes-count span {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+}
+
+.note-card {
+    background-color: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: all var(--transition-fast);
+    border: 1px solid var(--gray-200);
+}
+
+.note-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-color);
+}
+
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.note-course {
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.note-course.mvc {
+    background-color: rgba(67, 97, 238, 0.1);
+    color: var(--course-mvc);
+}
+
+.note-course.se {
+    background-color: rgba(114, 9, 183, 0.1);
+    color: var(--course-se);
+}
+
+.note-course.cn {
+    background-color: rgba(76, 201, 240, 0.1);
+    color: var(--course-cn);
+}
+
+.note-course.cce {
+    background-color: rgba(248, 150, 30, 0.1);
+    color: var(--course-cce);
+}
+
+.note-course.vp {
+    background-color: rgba(247, 37, 133, 0.1);
+    color: var(--course-vp);
+}
+
+.note-course.coal {
+    background-color: rgba(56, 176, 0, 0.1);
+    color: var(--course-coal);
+}
+
+.note-date {
+    font-size: 0.85rem;
+    color: var(--gray-500);
+}
+
+.note-body {
+    padding: var(--space-4);
+}
+
+.note-title {
+    font-size: 1.3rem;
+    margin-bottom: var(--space-2);
+    color: var(--dark-color);
+    line-height: 1.3;
+}
+
+.note-description {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: var(--space-4);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.note-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--gray-200);
+    font-size: 0.85rem;
+    color: var(--gray-600);
+}
+
+.note-author,
+.note-pages {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.note-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-4);
+    border-top: 1px solid var(--gray-200);
+    background-color: var(--gray-50);
+}
+
+.note-rating {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    color: var(--warning-color);
+    font-weight: 500;
+}
+
+.rating-count {
+    color: var(--gray-500);
+    font-size: 0.85rem;
+}
+
+.note-actions {
+    display: flex;
+    gap: var(--space-2);
+}
+
+.btn-preview,
+.btn-download {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-2) var(--space-3);
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.btn-preview {
+    background-color: var(--gray-200);
+    color: var(--gray-700);
+}
+
+.btn-preview:hover {
+    background-color: var(--gray-300);
+}
+
+.btn-download {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-download:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+}
+
+.page-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background-color: white;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-md);
+    color: var(--gray-700);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.page-btn:hover:not(:disabled) {
+    background-color: var(--gray-100);
+    border-color: var(--gray-400);
+}
+
+.page-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.page-numbers {
+    display: flex;
+    gap: var(--space-1);
+}
+
+.page-number {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-md);
+    color: var(--gray-700);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.page-number:hover {
+    background-color: var(--gray-100);
+}
+
+.page-number.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.page-ellipsis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--gray-500);
+}
+
+/* Course links section */
+.course-links-section {
+    margin-bottom: var(--space-8);
+}
+
+.course-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-4);
+}
+
+.course-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background-color: white;
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-fast);
+    border: 2px solid transparent;
+}
+
+.course-link:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.course-link.mvc {
+    border-color: var(--course-mvc);
+}
+
+.course-link.se {
+    border-color: var(--course-se);
+}
+
+.course-link.cn {
+    border-color: var(--course-cn);
+}
+
+.course-link.cce {
+    border-color: var(--course-cce);
+}
+
+.course-link.vp {
+    border-color: var(--course-vp);
+}
+
+.course-link.coal {
+    border-color: var(--course-coal);
+}
+
+.course-link i {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    color: white;
+}
+
+.course-link.mvc i {
+    background-color: var(--course-mvc);
+}
+
+.course-link.se i {
+    background-color: var(--course-se);
+}
+
+.course-link.cn i {
+    background-color: var(--course-cn);
+}
+
+.course-link.cce i {
+    background-color: var(--course-cce);
+}
+
+.course-link.vp i {
+    background-color: var(--course-vp);
+}
+
+.course-link.coal i {
+    background-color: var(--course-coal);
+}
+
+.course-link span {
+    font-weight: 500;
+    color: var(--dark-color);
+    flex: 1;
+}
+
+/* Empty state */
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: var(--space-12) var(--space-6);
+    background-color: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.empty-icon {
+    font-size: 4rem;
+    color: var(--gray-300);
+    margin-bottom: var(--space-4);
+}
+
+.empty-title {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-2);
+    color: var(--gray-700);
+}
+
+.empty-description {
+    color: var(--gray-600);
+    max-width: 400px;
+    margin: 0 auto var(--space-6);
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .notes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+    
+    .course-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .filter-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-4);
+    }
+    
+    .filter-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .filter-group select {
+        width: 100%;
+    }
+    
+    .notes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .notes-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2);
+    }
+    
+    .course-links {
+        grid-template-columns: 1fr;
+    }
+    
+    .pagination {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .note-footer {
+        flex-direction: column;
+        gap: var(--space-3);
+        align-items: stretch;
+    }
+    
+    .note-actions {
+        justify-content: space-between;
+    }
+    
+    .btn-preview,
+    .btn-download {
+        flex: 1;
+        justify-content: center;
+    }
+    
+    .page-btn {
+        padding: var(--space-2) var(--space-3);
+        font-size: 0.9rem;
+    }
+    
+    .page-number {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+}

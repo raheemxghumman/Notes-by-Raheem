@@ -1,0 +1,160 @@
+/* 
+ * Container Layout - NotesByRaheem.xyz
+ * Container and layout utilities
+ */
+
+/* Main container */
+.container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+}
+
+/* Fluid container (full width) */
+.container-fluid {
+    width: 100%;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+}
+
+/* Narrow container */
+.container-narrow {
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+}
+
+/* Wide container */
+.container-wide {
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+}
+
+/* Section spacing */
+.section {
+    padding-top: var(--space-12);
+    padding-bottom: var(--space-12);
+}
+
+.section-sm {
+    padding-top: var(--space-6);
+    padding-bottom: var(--space-6);
+}
+
+.section-lg {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+}
+
+.section-xl {
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
+}
+
+/* Section with background */
+.section-bg {
+    background-color: var(--gray-100);
+}
+
+.section-bg-primary {
+    background-color: var(--primary-extra-light);
+}
+
+.section-bg-secondary {
+    background-color: var(--secondary-extra-light);
+}
+
+.section-bg-accent {
+    background-color: var(--accent-extra-light);
+}
+
+/* Content alignment */
+.content-center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-left {
+    text-align: left;
+}
+
+.content-right {
+    text-align: right;
+}
+
+/* Content width constraints */
+.content-narrow {
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-wide {
+    max-width: 90ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Grid container */
+.grid-container {
+    display: grid;
+    gap: var(--space-6);
+}
+
+.grid-container-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-container-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-container-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Responsive container adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding-left: calc(var(--container-padding) / 2);
+        padding-right: calc(var(--container-padding) / 2);
+    }
+    
+    .grid-container-2,
+    .grid-container-3,
+    .grid-container-4 {
+        grid-template-columns: 1fr;
+    }
+    
+    .section {
+        padding-top: var(--space-8);
+        padding-bottom: var(--space-8);
+    }
+    
+    .section-lg {
+        padding-top: var(--space-12);
+        padding-bottom: var(--space-12);
+    }
+    
+    .section-xl {
+        padding-top: var(--space-16);
+        padding-bottom: var(--space-16);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .grid-container-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

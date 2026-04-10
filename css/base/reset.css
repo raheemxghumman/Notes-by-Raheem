@@ -1,0 +1,344 @@
+/* 
+ * CSS Reset - NotesByRaheem.xyz
+ * Modern CSS reset with sensible defaults
+ */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set core root defaults */
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeSpeed;
+}
+
+/* Remove list styles on ul, ol elements */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Remove default link styling */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Inherit fonts for form elements */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Remove default button styling */
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Remove default fieldset styling */
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove default table spacing */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Remove default quote styling */
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+/* Remove default details marker */
+details > summary {
+    list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Remove default dialog styling */
+dialog {
+    padding: 0;
+    border: none;
+}
+
+/* Remove default meter styling */
+meter {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* Remove default progress styling */
+progress {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* Remove default textarea resize */
+textarea {
+    resize: vertical;
+}
+
+/* Remove default number input spinner */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Remove default search input styling */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+}
+
+/* Remove default color input styling */
+input[type="color"] {
+    -webkit-appearance: none;
+    border: none;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: var(--radius-md);
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Remove focus styles for mouse users */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Improve media defaults */
+audio,
+video {
+    display: inline-block;
+}
+
+/* Improve canvas defaults */
+canvas {
+    display: block;
+}
+
+/* Improve iframe defaults */
+iframe {
+    border: none;
+}
+
+/* Improve pre defaults */
+pre {
+    overflow: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Improve code defaults */
+code,
+kbd,
+samp {
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+}
+
+/* Improve small defaults */
+small {
+    font-size: 0.875em;
+}
+
+/* Improve sub and sup defaults */
+sub,
+sup {
+    font-size: 0.75em;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/* Improve mark defaults */
+mark {
+    background-color: rgba(255, 235, 59, 0.3);
+    color: inherit;
+}
+
+/* Improve abbr defaults */
+abbr[title] {
+    text-decoration: underline dotted;
+    cursor: help;
+}
+
+/* Improve dfn defaults */
+dfn {
+    font-style: italic;
+}
+
+/* Improve cite defaults */
+cite {
+    font-style: normal;
+}
+
+/* Improve var defaults */
+var {
+    font-style: italic;
+}
+
+/* Improve samp defaults */
+samp {
+    font-family: var(--font-mono);
+}
+
+/* Improve kbd defaults */
+kbd {
+    font-family: var(--font-mono);
+    background-color: var(--gray-200);
+    border-radius: var(--radius-sm);
+    padding: 0.125em 0.25em;
+}
+
+/* Improve bdi and bdo defaults */
+bdi,
+bdo {
+    unicode-bidi: isolate;
+}
+
+/* Improve ruby defaults */
+ruby {
+    ruby-align: center;
+}
+
+/* Improve rt defaults */
+rt {
+    font-size: 0.75em;
+    opacity: 0.7;
+}
+
+/* Improve data defaults */
+data {
+    font-feature-settings: "tnum";
+}
+
+/* Improve time defaults */
+time {
+    font-feature-settings: "tnum";
+}
+
+/* Improve output defaults */
+output {
+    display: inline-block;
+}
+
+/* Improve meter defaults */
+meter {
+    width: 100%;
+    height: 0.5em;
+}
+
+/* Improve progress defaults */
+progress {
+    width: 100%;
+    height: 0.5em;
+}
+
+/* Improve template defaults */
+template {
+    display: none;
+}
+
+/* Improve slot defaults */
+slot {
+    display: contents;
+}
