@@ -433,18 +433,19 @@
             
             // Store user session
             const sessionData = {
-                userId: user.id,
+                id: user.id,
                 username: user.username,
+                name: user.fullName,
                 role: user.role,
-                fullName: user.fullName,
+                email: user.email,
                 loginTime: new Date().toISOString()
             };
             
             if (rememberMe) {
-                localStorage.setItem('notesbyraheem_session', JSON.stringify(sessionData));
-                localStorage.setItem('notesbyraheem_remember', 'true');
+                localStorage.setItem('currentUser', JSON.stringify(sessionData));
+                localStorage.setItem('rememberMe', 'true');
             } else {
-                sessionStorage.setItem('notesbyraheem_session', JSON.stringify(sessionData));
+                sessionStorage.setItem('currentUser', JSON.stringify(sessionData));
             }
             
             // Redirect based on role after a short delay
@@ -481,8 +482,8 @@
 
         // Check for existing session on page load
         document.addEventListener('DOMContentLoaded', function() {
-            const session = localStorage.getItem('notesbyraheem_session') || 
-                           sessionStorage.getItem('notesbyraheem_session');
+            const session = localStorage.getItem('currentUser') ||
+                           sessionStorage.getItem('currentUser');
             
             if (session) {
                 try {
@@ -490,7 +491,7 @@
                     usernameInput.value = userData.username;
                     
                     // If "remember me" was checked, show a welcome back message
-                    if (localStorage.getItem('notesbyraheem_remember')) {
+                    if (localStorage.getItem('rememberMe')) {
                         showMessage(`Welcome back, ${userData.username}!`, 'success');
                         setTimeout(() => {
                             loginMessage.style.display = 'none';
@@ -498,9 +499,9 @@
                     }
                 } catch (e) {
                     // Invalid session data, clear it
-                    localStorage.removeItem('notesbyraheem_session');
-                    sessionStorage.removeItem('notesbyraheem_session');
-                    localStorage.removeItem('notesbyraheem_remember');
+                    localStorage.removeItem('currentUser');
+                    sessionStorage.removeItem('currentUser');
+                    localStorage.removeItem('rememberMe');
                 }
             }
         });

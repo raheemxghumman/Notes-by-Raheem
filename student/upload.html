@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Notes - NotesByRaheem.xyz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/pages/upload.css">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+</head>
+<body class="upload-page">
+    <!-- Navigation Header -->
+    <header class="dashboard-header">
+        <div class="container">
+            <nav class="dashboard-nav">
+                <div class="nav-brand">
+                    <a href="../index.html" class="logo-link">
+                        <i class="fas fa-book-open logo-icon"></i>
+                        <span class="logo-text">NotesBy<span class="logo-domain">Raheem.xyz</span></span>
+                    </a>
+                </div>
+                
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li class="nav-item">
+                            <a href="dashboard.html" class="nav-link">
+                                <i class="fas fa-home"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="browse.html" class="nav-link">
+                                <i class="fas fa-search"></i>
+                                <span>Browse Notes</span>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="upload.html" class="nav-link">
+                                <i class="fas fa-upload"></i>
+                                <span>Upload Notes</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="my-notes.html" class="nav-link">
+                                <i class="fas fa-file-alt"></i>
+                                <span>My Notes</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-user">
+                    <div class="user-dropdown">
+                        <button class="user-toggle">
+                            <div class="user-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <span class="user-name">Student User</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="profile.html" class="dropdown-item">
+                                <i class="fas fa-user"></i>
+                                <span>Profile</span>
+                            </a>
+                            <a href="settings.html" class="dropdown-item">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </a>
+                            <button id="logout-btn" class="dropdown-item logout">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Logout</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="upload-main">
+        <div class="container">
+            <div class="upload-container">
+                <div class="upload-header">
+                    <h1>Upload Your Notes</h1>
+                    <p>Share your study materials with classmates. Upload notes in PDF, DOCX, or image formats. All uploads require admin approval before being published.</p>
+                </div>
+
+                <div class="upload-card">
+                    <form id="upload-form" class="upload-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="note-title">Note Title <span class="required">*</span></label>
+                                <input type="text" id="note-title" class="form-control" placeholder="e.g., Calculus 101 - Chapter 3 Derivatives" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="course-select">Course <span class="required">*</span></label>
+                                <select id="course-select" class="form-control" required>
+                                    <option value="">Select a course</option>
+                                    <option value="mvc">Multi-variable Calculus</option>
+                                    <option value="se">Software Engineering</option>
+                                    <option value="cn">Computer Networks</option>
+                                    <option value="cce">Civics and Community Engagement</option>
+                                    <option value="vp">Visual Programming</option>
+                                    <option value="coal">Computer Organization and Assembly Language</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="note-description">Description <span class="required">*</span></label>
+                            <textarea id="note-description" class="form-control" placeholder="Describe your notes. Include topics covered, key concepts, and any special features..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Upload Files <span class="required">*</span></label>
+                            <div class="file-upload-area" id="file-drop-area">
+                                <div class="file-upload-icon">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                </div>
+                                <div class="file-upload-text">
+                                    <h3>Drag & Drop Files Here</h3>
+                                    <p>or click to browse. Supported formats: PDF, DOCX, PPTX, JPG, PNG (Max 10MB each)</p>
+                                    <div class="file-upload-btn" id="browse-btn">Browse Files</div>
+                                </div>
+                                <input type="file" id="file-input" class="file-input" multiple accept=".pdf,.doc,.docx,.ppt,.pptx,.jpg,.jpeg,.png,.txt">
+                            </div>
+                        </div>
+
+                        <div class="file-preview" id="file-preview">
+                            <h4>Selected Files (0)</h4>
+                            <div class="file-list" id="file-list">
+                                <!-- Files will be dynamically added here -->
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="tags">Tags</label>
+                                <input type="text" id="tags" class="form-control" placeholder="e.g., derivatives, limits, chapter-3, exam-prep">
+                                <small class="form-text">Separate tags with commas</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="visibility">Visibility</label>
+                                <select id="visibility" class="form-control">
+                                    <option value="public">Public (after approval)</option>
+                                    <option value="private">Private (only me)</option>
+                                    <option value="classmates">Classmates Only</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="upload-options">
+                            <div class="option-checkbox">
+                                <input type="checkbox" id="agree-terms" required>
+                                <label for="agree-terms">I agree to the <a href="#" class="text-link">Terms of Service</a> and confirm these notes are my original work or properly cited</label>
+                            </div>
+                            <div class="option-checkbox">
+                                <input type="checkbox" id="allow-download">
+                                <label for="allow-download">Allow others to download these notes</label>
+                            </div>
+                            <div class="option-checkbox">
+                                <input type="checkbox" id="notify-approval" checked>
+                                <label for="notify-approval">Notify me when these notes are approved</label>
+                            </div>
+                        </div>
+
+                        <div class="upload-status">
+                            <div class="status-message" id="status-message"></div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-cancel" id="cancel-btn">Cancel</button>
+                            <button type="submit" class="btn-submit" id="submit-btn">Upload Notes</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="upload-info">
+                    <h3><i class="fas fa-info-circle"></i> Upload Guidelines</h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Upload only relevant, study-related materials. No spam or inappropriate content.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Ensure files are clear, readable, and properly organized.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Include descriptive titles and detailed descriptions to help others find your notes.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>All uploads go through admin approval (typically within 24 hours).</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>You can track the status of your uploads in "My Notes" section.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="../index.html" class="footer-logo">
+                        <i class="fas fa-book-open"></i>
+                        <span>NotesBy<span class="logo-domain">Raheem.xyz</span></span>
+                    </a>
+                    <p class="footer-tagline">Sharing knowledge, one note at a time</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Student</h4>
+                        <ul>
+                            <li><a href="dashboard.html">Dashboard</a></li>
+                            <li><a href="browse.html">Browse Notes</a></li>
+                            <li><a href="upload.html">Upload Notes</a></li>
+                            <li><a href="my-notes.html">My Notes</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>Courses</h4>
+                        <ul>
+                            <li><a href="browse.html?course=mvc">Multi-variable Calculus</a></li>
+                            <li><a href="browse.html?course=se">Software Engineering</a></li>
+                            <li><a href="browse.html?course=cn">Computer Networks</a></li>
+                            <li><a href="browse.html?course=cce">Civics & Community</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="../index.html#about">About</a></li>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 NotesByRaheem.xyz. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Check authentication
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simulate authentication check
+            const currentUser = JSON.parse(localStorage.getItem('currentUser') || sessionStorage.getItem('currentUser'));
+            
+            if (!currentUser || currentUser.role !== 'student') {
+                window.location.href = '../login.html';
+                return;
+            }
+            
+            // Update user name in header
+            const userNameElement = document.querySelector('.user-name');
+            if (userNameElement && currentUser.name) {
+                userNameElement.textContent = currentUser.name;
+            }
+            
+            // Initialize upload functionality
+            initUploadForm();
+        });
+
+        function initUploadForm() {
+            const fileInput = document.getElementById('file-input');
+            const browseBtn = document.getElementById('browse-btn');
+            const fileDropArea = document.getElementById('file-drop-area');
+            const fileList = document.getElementById('file-list');
+            const filePreview = document.getElementById('file-preview');
+            const uploadForm = document.getElementById('upload-form');
+            const statusMessage = document.getElementById('status-message');
+            const submitBtn = document.getElementById('submit-btn');
+            const cancelBtn = document.getElementById('cancel-btn');
+            
+            let selectedFiles = [];
+            
+            // Browse button click
+            browseBtn.addEventListener('click', () => {
+                fileInput.click();
+            });
+            
+            // File input change
+            fileInput.addEventListener('change', handleFileSelect);
+            
+            // Drag and drop events
+            fileDropArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                fileDropArea.classList.add('dragover');
+            });
+            
+            fileDropArea.addEventListener('dragleave', () => {
+                fileDropArea.classList.remove('dragover');
+            });
+            
+            fileDropArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                fileDropArea.classList.remove('dragover');
+                
+                if (e.dataTransfer.files.length) {
+                    handleFiles(e.dataTransfer.files);
+                }
+            });
+            
+            // Form submission
+            uploadForm.addEventListener('submit', handleSubmit);
+            
+            // Cancel button
+            cancelBtn.addEventListener('click', () => {
+                if (selectedFiles.length > 0 && !confirm('Are you sure you want to cancel? All selected files will be lost.')) {
+                    return;
+                }
+                window.location.href = 'dashboard.html';
+            });
+            
+            // Logout button
+            document.getElementById('logout-btn').addEventListener('click', () => {
+                localStorage.removeItem('currentUser');
+                sessionStorage.removeItem('currentUser');
+                window.location.href = '../login.html';
+            });
+            
+            function handleFileSelect(e) {
+                handleFiles(e.target.files);
+                fileInput.value = ''; // Reset input
+            }
+            
+            function handleFiles(files) {
+                const validTypes = [
+                    'application/pdf',
+                    'application/msword',
+                    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                    'application/vnd.ms-powerpoint',
+                    'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+                    'image/jpeg',
+                    'image/png',
+                    'image/jpg',
+                    'text/plain'
+                ];
+                
+                const maxSize = 10 * 1024 * 1024; // 10MB
+                
+                for (let file of files) {
+                    // Check file type
+                    if (!validTypes.includes(file.type)) {
+                        showStatus('error', `File "${file.name}" has an unsupported format. Please upload PDF, DOCX, PPTX, JPG, PNG, or TXT files.`);
+                        continue;
+                    }
+                    
+                    // Check file size
+                    if (file.size > maxSize) {
+                        showStatus('error', `File "${file.name}" exceeds 10MB limit.`);
+                        continue;
+                    }
+                    
+                    // Add to selected files
+                    selectedFiles.push(file);
+                }
+                
+                updateFileList();
+            }
+            
+            function updateFileList() {
+                fileList.innerHTML = '';
+                
+                if (selectedFiles.length === 0) {
+                    filePreview.querySelector('h4').textContent = 'Selected Files (0)';
+                    filePreview.style.display = 'none';
+                    return;
+                }
+                
+                filePreview.querySelector('h4').textContent = `Selected Files (${selectedFiles.length})`;
+                filePreview.style.display = 'block';
+                
+                selectedFiles.forEach((file, index) => {
+                    const fileItem = document.createElement('div');
+                    fileItem.className = 'file-item';
+                    
+                    const fileSize = formatFileSize(file.size);
+                    const fileIcon = getFileIcon(file.type);
+                    
+                    fileItem.innerHTML = `
+                        <div class="file-info">
+                            <div class="file-icon">
+                                <i class="${fileIcon}"></i>
+                            </div>
+                            <div class="file-details">
+                                <h5>${file.name}</h5>
+                                <p>${fileSize} • ${file.type}</p>
+                            </div>
+                        </div>
+                        <button type="button" class="file-remove" data-index="${index}">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    `;
+                    
+                    fileList.appendChild(fileItem);
+                });
+                
+                // Add remove event listeners
+                document.querySelectorAll('.file-remove').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const index = parseInt(e.currentTarget.getAttribute('data-index'));
+                        selectedFiles.splice(index, 1);
+                        updateFileList();
+                    });
+                });
+            }
+            
+            function getFileIcon(fileType) {
+                if (fileType.includes('pdf')) return 'fas fa-file-pdf';
+                if (fileType.includes('word') || fileType.includes('document')) return 'fas fa-file-word';
+                if (fileType.includes('powerpoint') || fileType.includes('presentation')) return 'fas fa-file-powerpoint';
+                if (fileType.includes('image')) return 'fas fa-file-image';
+                if (fileType.includes('text')) return 'fas fa-file-alt';
+                return 'fas fa-file';
+            }
+            
+            function formatFileSize(bytes) {
+                if (bytes === 0) return '0 Bytes';
+                const k = 1024;
+                const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+            }
+            
+            function showStatus(type, message) {
+                statusMessage.className = `status-message ${type}`;
+                statusMessage.textContent = message;
+                statusMessage.style.display = 'block';
+                
+                // Auto-hide success messages after 5 seconds
+                if (type === 'success') {
+                    setTimeout(() => {
+                        statusMessage.style.display = 'none';
+                    }, 5000);
+                }
+            }
+            
+            function handleSubmit(e) {
+                e.preventDefault();
+                
+                // Validate form
+                const title = document.getElementById('note-title').value.trim();
+                const course = document.getElementById('course-select').value;
+                const description = document.getElementById('note-description').value.trim();
+                
+                if (!title) {
+                    showStatus('error', 'Please enter a note title.');
+                    return;
+                }
+                
+                if (!course) {
+                    showStatus('error', 'Please select a course.');
+                    return;
+                }
+                
+                if (!description) {
+                    showStatus('error', 'Please enter a description.');
+                    return;
+                }
+                
+                if (selectedFiles.length === 0) {
+                    showStatus('error', 'Please select at least one file to upload.');
+                    return;
+                }
+                
+                if (!document.getElementById('agree-terms').checked) {
+                    showStatus('error', 'You must agree to the Terms of Service.');
+                    return;
+                }
+                
+                // Disable submit button
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Uploading...';
+                
+                // Simulate upload process
+                showStatus('info', 'Uploading your notes... This may take a moment.');
+                
+                // Get current user
+                const currentUser = JSON.parse(localStorage.getItem('currentUser') || sessionStorage.getItem('currentUser'));
+                
+                // Create note object
+                const note = {
+                    id: Date.now(),
+                    title: title,
+                    course: course,
+                    description: description,
+                    files: selectedFiles.map(file => ({
+                        name: file.name,
+                        size: file.size,
+                        type: file.type
+                    })),
+                    tags: document.getElementById('tags').value.split(',').map(tag => tag.trim()).filter(tag => tag),
+                    visibility: document.getElementById('visibility').value,
+                    allowDownload: document.getElementById('allow-download').checked,
+                    notifyApproval: document.getElementById('notify-approval').checked,
+                    author: currentUser.name || currentUser.username,
+                    authorId: currentUser.id,
+                    status: 'pending', // pending, approved, rejected
+                    uploadedAt: new Date().toISOString(),
+                    approvedAt: null,
+                    approvedBy: null,
+                    downloads: 0,
+                    views: 0,
+                    rating: 0
+                };
+                
+                // Save to localStorage (simulating backend)
+                const notes = JSON.parse(localStorage.getItem('studentNotes') || '[]');
+                notes.push(note);
+                localStorage.setItem('studentNotes', JSON.stringify(notes));
+                
+                // Simulate API delay
+                setTimeout(() => {
+                    showStatus('success', 'Notes uploaded successfully! They are now pending admin approval. You can track the status in "My Notes".');
+                    submitBtn.textContent = 'Upload Successful!';
+                    
+                    // Reset form after 3 seconds
+                    setTimeout(() => {
+                        uploadForm.reset();
+                        selectedFiles = [];
+                        updateFileList();
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Upload Notes';
+                    }, 3000);
+                }, 2000);
+            }
+        });
+    </script>
+</body>
+</html>

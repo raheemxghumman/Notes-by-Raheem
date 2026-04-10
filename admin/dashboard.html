@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - NotesByRaheem.xyz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/pages/admin.css">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+</head>
+<body class="admin-page">
+    <!-- Navigation Header -->
+    <header class="dashboard-header">
+        <div class="container">
+            <nav class="dashboard-nav">
+                <div class="nav-brand">
+                    <a href="../index.html" class="logo-link">
+                        <i class="fas fa-book-open logo-icon"></i>
+                        <span class="logo-text">NotesBy<span class="logo-domain">Raheem.xyz</span></span>
+                    </a>
+                </div>
+                
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li class="nav-item active">
+                            <a href="dashboard.html" class="nav-link">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>Admin Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pending.html" class="nav-link">
+                                <i class="fas fa-clock"></i>
+                                <span>Pending Notes</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="approved.html" class="nav-link">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Approved Notes</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="users.html" class="nav-link">
+                                <i class="fas fa-users"></i>
+                                <span>Manage Users</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="reports.html" class="nav-link">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>Reports</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-user">
+                    <div class="user-dropdown">
+                        <button class="user-toggle">
+                            <div class="user-avatar admin">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <span class="user-name">Admin User</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="profile.html" class="dropdown-item">
+                                <i class="fas fa-user"></i>
+                                <span>Profile</span>
+                            </a>
+                            <a href="settings.html" class="dropdown-item">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </a>
+                            <button id="logout-btn" class="dropdown-item logout">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Logout</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <div class="container">
+            <div class="admin-header">
+                <h1>Admin Dashboard</h1>
+                <p>Manage note approvals, review submissions, and monitor platform activity.</p>
+            </div>
+
+            <!-- Stats Overview -->
+            <div class="admin-stats">
+                <div class="stat-card">
+                    <div class="stat-icon pending">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="pending-count">12</h3>
+                        <p>Pending Notes</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon approved">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="approved-count">48</h3>
+                        <p>Approved Notes</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon rejected">
+                        <i class="fas fa-times-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="rejected-count">5</h3>
+                        <p>Rejected Notes</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon total">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="total-count">65</h3>
+                        <p>Total Notes</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Sections -->
+            <div class="admin-sections">
+                <!-- Pending Notes Section -->
+                <div class="admin-section">
+                    <div class="section-header">
+                        <h2>Pending Approval</h2>
+                        <span class="badge" id="pending-badge">12</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="pending-notes-list" id="pending-notes-list">
+                            <!-- Pending notes will be dynamically added here -->
+                            <div class="pending-note-item">
+                                <div class="note-preview">
+                                    <div class="note-preview-icon">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </div>
+                                </div>
+                                <div class="note-details">
+                                    <h4>Calculus 101 - Chapter 3 Derivatives</h4>
+                                    <div class="note-meta">
+                                        <span><i class="fas fa-user"></i> John Doe</span>
+                                        <span><i class="fas fa-book"></i> Multi-variable Calculus</span>
+                                        <span><i class="fas fa-calendar"></i> 2 hours ago</span>
+                                    </div>
+                                    <p class="note-description">Complete notes on derivatives, including rules, examples, and practice problems. Covers chain rule, product rule, and quotient rule.</p>
+                                    <div class="note-actions">
+                                        <button class="btn-view" data-note-id="1">
+                                            <i class="fas fa-eye"></i> View Details
+                                        </button>
+                                        <button class="btn-approve" data-note-id="1">
+                                            <i class="fas fa-check"></i> Approve
+                                        </button>
+                                        <button class="btn-reject" data-note-id="1">
+                                            <i class="fas fa-times"></i> Reject
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="pending-note-item">
+                                <div class="note-preview">
+                                    <div class="note-preview-icon">
+                                        <i class="fas fa-file-word"></i>
+                                    </div>
+                                </div>
+                                <div class="note-details">
+                                    <h4>Software Engineering Requirements</h4>
+                                    <div class="note-meta">
+                                        <span><i class="fas fa-user"></i> Sarah Johnson</span>
+                                        <span><i class="fas fa-book"></i> Software Engineering</span>
+                                        <span><i class="fas fa-calendar"></i> 5 hours ago</span>
+                                    </div>
+                                    <p class="note-description">Detailed notes on software requirements engineering, including functional and non-functional requirements, use cases, and user stories.</p>
+                                    <div class="note-actions">
+                                        <button class="btn-view" data-note-id="2">
+                                            <i class="fas fa-eye"></i> View Details
+                                        </button>
+                                        <button class="btn-approve" data-note-id="2">
+                                            <i class="fas fa-check"></i> Approve
+                                        </button>
+                                        <button class="btn-reject" data-note-id="2">
+                                            <i class="fas fa-times"></i> Reject
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="pending-note-item">
+                                <div class="note-preview">
+                                    <div class="note-preview-icon">
+                                        <i class="fas fa-file-image"></i>
+                                    </div>
+                                </div>
+                                <div class="note-details">
+                                    <h4>Network Topologies Diagram</h4>
+                                    <div class="note-meta">
+                                        <span><i class="fas fa-user"></i> Mike Chen</span>
+                                        <span><i class="fas fa-book"></i> Computer Networks</span>
+                                        <span><i class="fas fa-calendar"></i> 1 day ago</span>
+                                    </div>
+                                    <p class="note-description">Visual diagrams of different network topologies (star, bus, ring, mesh) with explanations and comparison tables.</p>
+                                    <div class="note-actions">
+                                        <button class="btn-view" data-note-id="3">
+                                            <i class="fas fa-eye"></i> View Details
+                                        </button>
+                                        <button class="btn-approve" data-note-id="3">
+                                            <i class="fas fa-check"></i> Approve
+                                        </button>
+                                        <button class="btn-reject" data-note-id="3">
+                                            <i class="fas fa-times"></i> Reject
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center" style="margin-top: 1rem;">
+                            <a href="pending.html" class="btn-view" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                                <i class="fas fa-list"></i> View All Pending Notes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity Section -->
+                <div class="admin-section">
+                    <div class="section-header">
+                        <h2>Recent Activity</h2>
+                        <span class="badge">Today</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="recent-activity" id="recent-activity">
+                            <div class="activity-item">
+                                <div class="activity-icon approval">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p><strong>You approved</strong> "Calculus Integration Notes" by Alex Brown</p>
+                                    <span class="activity-time">10 minutes ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon rejection">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p><strong>You rejected</strong> "Civics Chapter 5" by Emma Wilson (Poor quality)</p>
+                                    <span class="activity-time">1 hour ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon upload">
+                                    <i class="fas fa-upload"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p><strong>New note uploaded:</strong> "Assembly Language Basics" by David Lee</p>
+                                    <span class="activity-time">3 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon approval">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p><strong>You approved</strong> "Visual Programming UI Design" by Sophia Martinez</p>
+                                    <span class="activity-time">5 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon upload">
+                                    <i class="fas fa-upload"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p><strong>New note uploaded:</strong> "Network Protocols Overview" by Ryan Kim</p>
+                                    <span class="activity-time">Yesterday, 2:30 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="admin-actions">
+                <button class="action-btn" id="bulk-approve-btn">
+                    <div class="action-icon">
+                        <i class="fas fa-check-double"></i>
+                    </div>
+                    <div class="action-content">
+                        <h3>Bulk Approve</h3>
+                        <p>Approve multiple notes at once</p>
+                    </div>
+                </button>
+                <button class="action-btn" id="manage-users-btn">
+                    <div class="action-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <div class="action-content">
+                        <h3>Manage Users</h3>
+                        <p>View and manage student accounts</p>
+                    </div>
+                </button>
+                <button class="action-btn" id="generate-reports-btn">
+                    <div class="action-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="action-content">
+                        <h3>Generate Reports</h3>
+                        <p>Create usage and activity reports</p>
+                    </div>
+                </button>
+                <button class="action-btn" id="system-settings-btn">
+                    <div class="action-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <div class="action-content">
+                        <h3>System Settings</h3>
+                        <p>Configure platform settings</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Note Detail Modal -->
+    <div class="modal" id="note-detail-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Note Details</h2>
+                <button class="modal-close" id="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="note-detail-view" id="note-detail-content">
+                    <!-- Content will be dynamically populated -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel" id="modal-cancel">Close</button>
+                <button class="btn-approve" id="modal-approve">Approve Note</button>
+                <button class="btn-reject" id="modal-reject">Reject Note</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rejection Reason Modal -->
+    <div class="modal" id="rejection-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Reject Note</h2>
+                <button class="modal-close" id="rejection-modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Please provide a reason for rejecting this note. This feedback will be sent to the student.</p>
+                <div class="rejection-reason">
+                    <label for="rejection-reason-text">Reason for rejection:</label>
+                    <textarea id="rejection-reason-text" placeholder="Enter reason for rejection..."></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel" id="rejection-cancel">Cancel</button>
+                <button class="btn-reject" id="rejection-confirm">Confirm Rejection</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="../index.html" class="footer-logo">
+                        <i class="fas fa-book-open"></i>
+                        <span>NotesBy<span class="logo-domain">Raheem.xyz</span></span>
+                    </a>
+                    <p class="footer-tagline">Admin Panel - Managing knowledge sharing</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Admin</h4>
+                        <ul>
+                            <li><a href="dashboard.html">Dashboard</a></li>
+                            <li><a href="pending.html">Pending Notes</a></li>
+                            <li><a href="approved.html">Approved Notes</a></li>
+                            <li><a href="users.html">Manage Users</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>Platform</h4>
+                        <ul>
+                            <li><a href="../student/dashboard.html">Student View</a></li>
+                            <li><a href="../index.html">Public Website</a></li>
+                            <li><a href="#">Help & Support</a></li>
+                            <li><a href="#">System Status</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Content Guidelines</a></li>
+                            <li><a href="#">Copyright</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 NotesByRaheem.xyz - Admin Panel v1.0</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+    // Check authentication
+    document.addEventListener('DOMContentLoaded', function() {
+        // Simulate authentication check
+        const currentUser = JSON.parse(localStorage.getItem('currentUser') || sessionStorage.getItem('currentUser'));
+        
+        if (!currentUser || currentUser.role !== 'admin') {
+            window.location.href = '../login.html';
+            return;
+        }
+        
+        // Update user name in header
+        const userNameElement = document.querySelector('.user-name');
+        if (userNameElement && currentUser.name) {
+            userNameElement.textContent = currentUser.name;
+        }
+        
+        // Initialize admin functionality
+        initAdminDashboard();
+    });
+
+    function initAdminDashboard() {
+        // Load stats
+        updateStats();
+        
+        // Load pending notes
+        loadPendingNotes();
+        
+        // Load recent activity
+        loadRecentActivity();
+        
+        // Modal functionality
+        const noteDetailModal = document.getElementById('note-detail-modal');
+        const rejectionModal = document.getElementById('rejection-modal');
+        const modalClose = document.getElementById('modal-close');
+        const modalCancel = document.getElementById('modal-cancel');
+        const rejectionModalClose = document.getElementById('rejection-modal-close');
+        const rejectionCancel = document.getElementById('rejection-cancel');
+        const rejectionConfirm = document.getElementById('rejection-confirm');
+        const modalApprove = document.getElementById('modal-approve');
+        const modalReject = document.getElementById('modal-reject');
+        
+        let currentNoteId = null;
+        
+        // View note details
+        document.querySelectorAll('.btn-view').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const noteId = this.getAttribute('data-note-id');
+                showNoteDetails(noteId);
+            });
+        });
+        
+        // Approve note
+        document.querySelectorAll('.btn-approve').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const noteId = this.getAttribute('data-note-id');
+                approveNote(noteId);
+            });
+        });
+        
+        // Reject note
+        document.querySelectorAll('.btn-reject').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const noteId = this.getAttribute('data-note-id');
+                showRejectionModal(noteId);
+            });
+        });
+        
+        // Modal close buttons
+        modalClose.addEventListener('click', () => {
+            noteDetailModal.classList.remove('active');
+        });
+        
+        modalCancel.addEventListener('click', () => {
+            noteDetailModal.classList.remove('active');
+        });
+        
+        rejectionModalClose.addEventListener('click', () => {
+            rejectionModal.classList.remove('active');
+        });
+        
+        rejectionCancel.addEventListener('click', () => {
+            rejectionModal.classList.remove('active');
+        });
+        
+        // Modal approve/reject
+        modalApprove.addEventListener('click', () => {
+            if (currentNoteId) {
+                approveNote(currentNoteId);
+                noteDetailModal.classList.remove('active');
+            }
+        });
+        
+        modalReject.addEventListener('click', () => {
+            if (currentNoteId) {
+                showRejectionModal(currentNoteId);
+                noteDetailModal.classList.remove('active');
+            }
+        });
+        
+        // Confirm rejection
+        rejectionConfirm.addEventListener('click', () => {
+            const reason = document.getElementById('rejection-reason-text').value.trim();
+            if (!reason) {
+                alert('Please provide a reason for rejection.');
+                return;
+            }
+            
+            if (currentNoteId) {
+                rejectNote(currentNoteId, reason);
+                rejectionModal.classList.remove('active');
+                document.getElementById('rejection-reason-text').value = '';
+            }
+        });
+        
+        // Quick action buttons
+        document.getElementById('bulk-approve-btn').addEventListener('click', () => {
+            alert('Bulk approve feature would open a selection interface.');
+        });
+        
+        document.getElementById('manage-users-btn').addEventListener('click', () => {
+            window.location.href = 'users.html';
+        });
+        
+        document.getElementById('generate-reports-btn').addEventListener('click', () => {
+            window.location.href = 'reports.html';
+        });
+        
+        document.getElementById('system-settings-btn').addEventListener('click', () => {
+            window.location.href = 'settings.html';
+        });
+        
+        // Logout button
+        document.getElementById('logout-btn').addEventListener('click', () => {
+            localStorage.removeItem('currentUser');
+            sessionStorage.removeItem('currentUser');
+            window.location.href = '../login.html';
+        });
+        
+        // Close modals when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === noteDetailModal) {
+                noteDetailModal.classList.remove('active');
+            }
+            if (e.target === rejectionModal) {
+                rejectionModal.classList.remove('active');
+            }
+        });
+    }
+    
+    function updateStats() {
+        // In a real app, this would fetch from an API
+        // For now, we'll simulate with localStorage data
+        const notes = JSON.parse(localStorage.getItem('studentNotes') || '[]');
+        
+        const pendingCount = notes.filter(note => note.status === 'pending').length;
+        const approvedCount = notes.filter(note => note.status === 'approved').length;
+        const rejectedCount = notes.filter(note => note.status === 'rejected').length;
+        const totalCount = notes.length;
+        
+        // Update UI
+        document.getElementById('pending-count').textContent = pendingCount;
+        document.getElementById('approved-count').textContent = approvedCount;
+        document.getElementById('rejected-count').textContent = rejectedCount;
+        document.getElementById('total-count').textContent = totalCount;
+        document.getElementById('pending-badge').textContent = pendingCount;
+    }
+    
+    function loadPendingNotes() {
+        // In a real app, this would fetch from an API
+        // For now, we'll use sample data
+        const notes = JSON.parse(localStorage.getItem('studentNotes') || '[]');
+        const pendingNotes = notes.filter(note => note.status === 'pending');
+        
+        // If we have real pending notes, update the list
+        if (pendingNotes.length > 0) {
+            // We could dynamically generate the list here
+            // For simplicity, we'll just update the count
+            document.getElementById('pending-badge').textContent = pendingNotes.length;
+            document.getElementById('pending-count').textContent = pendingNotes.length;
+        }
+    }
+    
+    function loadRecentActivity() {
+        // In a real app, this would fetch from an API
+        // For now, we'll keep the static content
+    }
+    
+    function showNoteDetails(noteId) {
+        // In a real app, this would fetch note details from an API
+        // For now, we'll show sample data based on noteId
+        const noteDetailContent = document.getElementById('note-detail-content');
+        currentNoteId = noteId;
+        
+        // Sample note data
+        const sampleNotes = {
+            1: {
+                title: 'Calculus 101 - Chapter 3 Derivatives',
+                author: 'John Doe',
+                course: 'Multi-variable Calculus',
+                uploaded: '2 hours ago',
+                description: 'Complete notes on derivatives, including rules, examples, and practice problems. Covers chain rule, product rule, and quotient rule.',
+                status: 'pending',
+                files: [
+                    { name: 'derivatives.pdf', size: '2.4 MB', type: 'PDF' },
+                    { name: 'practice_problems.docx', size: '1.8 MB', type: 'DOCX' }
+                ],
+                tags: ['derivatives', 'calculus', 'chapter-3', 'practice']
+            },
+            2: {
+                title: 'Software Engineering Requirements',
+                author: 'Sarah Johnson',
+                course: 'Software Engineering',
+                uploaded: '5 hours ago',
+                description: 'Detailed notes on software requirements engineering, including functional and non-functional requirements, use cases, and user stories.',
+                status: 'pending',
+                files: [
+                    { name: 'requirements_notes.pdf', size: '3.1 MB', type: 'PDF' }
+                ],
+                tags: ['requirements', 'software-engineering', 'use-cases']
+            },
+            3: {
+                title: 'Network Topologies Diagram',
+                author: 'Mike Chen',
+                course: 'Computer Networks',
+                uploaded: '1 day ago',
+                description: 'Visual diagrams of different network topologies (star, bus, ring, mesh) with explanations and comparison tables.',
+                status: 'pending',
+                files: [
+                    { name: 'topologies_diagram.png', size: '1.2 MB', type: 'PNG' },
+                    { name: 'comparison_table.docx', size: '0.8 MB', type: 'DOCX' }
+                ],
+                tags: ['networks', 'topologies', 'diagrams']
+            }
+        };
+        
+        const note = sampleNotes[noteId] || sampleNotes[1];
+        
+        // Build HTML
+        noteDetailContent.innerHTML = `
+            <div class="detail-row">
+                <div class="detail-label">Title:</div>
+                <div class="detail-value">${note.title}</div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-label">Author:</div>
+                <div class="detail-value">${note.author}</div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-label">Course:</div>
+                <div class="detail-value">${note.course}</div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-label">Uploaded:</div>
+                <div class="detail-value">${note.uploaded}</div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-label">Status:</div>
+                <div class="detail-value status-${note.status}">${note.status.charAt(0).toUpperCase() + note.status.slice(1)}</div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-label">Description:</div>
+                <div class="detail-value">${note.description}</div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-label">Tags:</div>
+                <div class="detail-value">${note.tags.map(tag => `<span class="tag">${tag}</span>`).join(' ')}</div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-label">Files:</div>
+                <div class="detail-value">
+                    <div class="file-attachments">
+                        ${note.files.map(file => `
+                            <div class="file-attachment">
+                                <div class="file-attachment-info">
+                                    <div class="file-attachment-icon">
+                                        <i class="fas fa-file-${file.type.toLowerCase() === 'pdf' ? 'pdf' : file.type.toLowerCase() === 'docx' ? 'word' : 'image'}"></i>
+                                    </div>
+                                    <div>
+                                        <div class="file-attachment-name">${file.name}</div>
+                                        <div class="file-attachment-size">${file.size} • ${file.type}</div>
+                                    </div>
+                                </div>
+                                <button class="btn-view">
+                                    <i class="fas fa-download"></i> Download
+                                </button>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        // Show modal
+        document.getElementById('note-detail-modal').classList.add('active');
+    }
+    
+    function showRejectionModal(noteId) {
+        currentNoteId = noteId;
+        document.getElementById('rejection-modal').classList.add('active');
+    }
+    
+    function approveNote(noteId) {
+        // In a real app, this would send an API request
+        // For now, we'll update localStorage
+        const notes = JSON.parse(localStorage.getItem('studentNotes') || '[]');
+        const noteIndex = notes.findIndex(note => note.id == noteId);
+        
+        if (noteIndex !== -1) {
+            notes[noteIndex].status = 'approved';
+            notes[noteIndex].approvedAt = new Date().toISOString();
+            notes[noteIndex].approvedBy = 'Admin User';
+            localStorage.setItem('studentNotes', JSON.stringify(notes));
+            
+            // Update UI
+            updateStats();
+            
+            // Remove from pending list
+            const noteElement = document.querySelector(`[data-note-id="${noteId}"]`).closest('.pending-note-item');
+            if (noteElement) {
+                noteElement.remove();
+            }
+            
+            // Show success message
+            alert(`Note "${notes[noteIndex].title}" has been approved.`);
+        } else {
+            alert('Note not found. It may have already been processed.');
+        }
+    }
+    
+    function rejectNote(noteId, reason) {
+        // In a real app, this would send an API request
+        // For now, we'll update localStorage
+        const notes = JSON.parse(localStorage.getItem('studentNotes') || '[]');
+        const noteIndex = notes.findIndex(note => note.id == noteId);
+        
+        if (noteIndex !== -1) {
+            notes[noteIndex].status = 'rejected';
+            notes[noteIndex].rejectedAt = new Date().toISOString();
+            notes[noteIndex].rejectedBy = 'Admin User';
+            notes[noteIndex].rejectionReason = reason;
+            localStorage.setItem('studentNotes', JSON.stringify(notes));
+            
+            // Update UI
+            updateStats();
+            
+            // Remove from pending list
+            const noteElement = document.querySelector(`[data-note-id="${noteId}"]`).closest('.pending-note-item');
+            if (noteElement) {
+                noteElement.remove();
+            }
+            
+            // Show success message
+            alert(`Note "${notes[noteIndex].title}" has been rejected. Reason: ${reason}`);
+        } else {
+            alert('Note not found. It may have already been processed.');
+        }
+    }
+</script>
+</body>
+</html>

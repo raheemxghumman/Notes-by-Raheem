@@ -128,6 +128,11 @@
                             <option value="rating">Highest Rated</option>
                         </select>
                     </div>
+                    
+                    <button class="filter-toggle">
+                        <i class="fas fa-filter"></i>
+                        More Filters
+                    </button>
                 </div>
             </div>
 
@@ -136,12 +141,12 @@
                 <div class="notes-header">
                     <h2 class="notes-title">Available Notes</h2>
                     <div class="notes-count">
-                        <span id="notes-count">6</span> notes found
+                        <span id="notes-count">24</span> notes found
                     </div>
                 </div>
                 
                 <div class="notes-grid" id="notes-grid">
-                    <!-- Note Card 1 -->
+                    <!-- Note cards will be dynamically populated -->
                     <div class="note-card">
                         <div class="note-header">
                             <span class="note-course mvc">Multi-variable Calculus</span>
@@ -150,7 +155,7 @@
                         <div class="note-body">
                             <h3 class="note-title">Partial Derivatives & Applications</h3>
                             <p class="note-description">
-                                Comprehensive notes on partial derivatives, gradient vectors, and their applications.
+                                Comprehensive notes on partial derivatives, gradient vectors, and their applications in optimization problems.
                             </p>
                             <div class="note-meta">
                                 <span class="note-author">
@@ -167,6 +172,7 @@
                             <div class="note-rating">
                                 <i class="fas fa-star"></i>
                                 <span class="rating-value">4.8</span>
+                                <span class="rating-count">(24)</span>
                             </div>
                             <div class="note-actions">
                                 <button class="btn-preview">
@@ -181,16 +187,15 @@
                         </div>
                     </div>
                     
-                    <!-- Note Card 2 -->
                     <div class="note-card">
                         <div class="note-header">
                             <span class="note-course se">Software Engineering</span>
                             <span class="note-date">1 week ago</span>
                         </div>
                         <div class="note-body">
-                            <h3 class="note-title">Design Patterns</h3>
+                            <h3 class="note-title">Design Patterns - Singleton & Factory</h3>
                             <p class="note-description">
-                                Detailed explanation of Singleton and Factory design patterns with code examples.
+                                Detailed explanation of Singleton and Factory design patterns with code examples in Java.
                             </p>
                             <div class="note-meta">
                                 <span class="note-author">
@@ -207,6 +212,7 @@
                             <div class="note-rating">
                                 <i class="fas fa-star"></i>
                                 <span class="rating-value">4.5</span>
+                                <span class="rating-count">(18)</span>
                             </div>
                             <div class="note-actions">
                                 <button class="btn-preview">
@@ -221,7 +227,6 @@
                         </div>
                     </div>
                     
-                    <!-- Note Card 3 -->
                     <div class="note-card">
                         <div class="note-header">
                             <span class="note-course cn">Computer Networks</span>
@@ -230,7 +235,7 @@
                         <div class="note-body">
                             <h3 class="note-title">TCP/IP Protocol Suite</h3>
                             <p class="note-description">
-                                Complete overview of TCP/IP layers, protocols, and their functions.
+                                Complete overview of TCP/IP layers, protocols, and their functions in network communication.
                             </p>
                             <div class="note-meta">
                                 <span class="note-author">
@@ -247,6 +252,127 @@
                             <div class="note-rating">
                                 <i class="fas fa-star"></i>
                                 <span class="rating-value">4.9</span>
+                                <span class="rating-count">(32)</span>
+                            </div>
+                            <div class="note-actions">
+                                <button class="btn-preview">
+                                    <i class="fas fa-eye"></i>
+                                    Preview
+                                </button>
+                                <button class="btn-download">
+                                    <i class="fas fa-download"></i>
+                                    Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="note-card">
+                        <div class="note-header">
+                            <span class="note-course cce">Civics & Community Engagement</span>
+                            <span class="note-date">2 weeks ago</span>
+                        </div>
+                        <div class="note-body">
+                            <h3 class="note-title">Community Development Models</h3>
+                            <p class="note-description">
+                                Analysis of various community development models and their application in local contexts.
+                            </p>
+                            <div class="note-meta">
+                                <span class="note-author">
+                                    <i class="fas fa-user"></i>
+                                    Raheem
+                                </span>
+                                <span class="note-pages">
+                                    <i class="fas fa-file"></i>
+                                    10 pages
+                                </span>
+                            </div>
+                        </div>
+                        <div class="note-footer">
+                            <div class="note-rating">
+                                <i class="fas fa-star"></i>
+                                <span class="rating-value">4.2</span>
+                                <span class="rating-count">(12)</span>
+                            </div>
+                            <div class="note-actions">
+                                <button class="btn-preview">
+                                    <i class="fas fa-eye"></i>
+                                    Preview
+                                </button>
+                                <button class="btn-download">
+                                    <i class="fas fa-download"></i>
+                                    Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="note-card">
+                        <div class="note-header">
+                            <span class="note-course vp">Visual Programming</span>
+                            <span class="note-date">5 days ago</span>
+                        </div>
+                        <div class="note-body">
+                            <h3 class="note-title">C# Windows Forms - Event Handling</h3>
+                            <p class="note-description">
+                                Step-by-step guide to event handling in C# Windows Forms applications with practical examples.
+                            </p>
+                            <div class="note-meta">
+                                <span class="note-author">
+                                    <i class="fas fa-user"></i>
+                                    Usman Ali
+                                </span>
+                                <span class="note-pages">
+                                    <i class="fas fa-file"></i>
+                                    7 pages
+                                </span>
+                            </div>
+                        </div>
+                        <div class="note-footer">
+                            <div class="note-rating">
+                                <i class="fas fa-star"></i>
+                                <span class="rating-value">4.7</span>
+                                <span class="rating-count">(21)</span>
+                            </div>
+                            <div class="note-actions">
+                                <button class="btn-preview">
+                                    <i class="fas fa-eye"></i>
+                                    Preview
+                                </button>
+                                <button class="btn-download">
+                                    <i class="fas fa-download"></i>
+                                    Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="note-card">
+                        <div class="note-header">
+                            <span class="note-course coal">Computer Organization & Assembly Language</span>
+                            <span class="note-date">1 month ago</span>
+                        </div>
+                        <div class="note-body">
+                            <h3 class="note-title">MIPS Assembly - Basic Instructions</h3>
+                            <p class="note-description">
+                                Introduction to MIPS assembly language with examples of basic instructions and their usage.
+                            </p>
+                            <div class="note-meta">
+                                <span class="note-author">
+                                    <i class="fas fa-user"></i>
+                                    Admin
+                                </span>
+                                <span class="note-pages">
+                                    <i class="fas fa-file"></i>
+                                    14 pages
+                                </span>
+                            </div>
+                        </div>
+                        <div class="note-footer">
+                            <div class="note-rating">
+                                <i class="fas fa-star"></i>
+                                <span class="rating-value">4.6</span>
+                                <span class="rating-count">(19)</span>
                             </div>
                             <div class="note-actions">
                                 <button class="btn-preview">
@@ -271,11 +397,44 @@
                         <button class="page-number active">1</button>
                         <button class="page-number">2</button>
                         <button class="page-number">3</button>
+                        <span class="page-ellipsis">...</span>
+                        <button class="page-number">8</button>
                     </div>
                     <button class="page-btn next">
                         Next
                         <i class="fas fa-chevron-right"></i>
                     </button>
+                </div>
+            </div>
+
+            <!-- Course Quick Links -->
+            <div class="course-links-section">
+                <h2 class="section-title">Browse by Course</h2>
+                <div class="course-links">
+                    <a href="browse.html?course=mvc" class="course-link mvc">
+                        <i class="fas fa-calculator"></i>
+                        <span>Multi-variable Calculus</span>
+                    </a>
+                    <a href="browse.html?course=se" class="course-link se">
+                        <i class="fas fa-code"></i>
+                        <span>Software Engineering</span>
+                    </a>
+                    <a href="browse.html?course=cn" class="course-link cn">
+                        <i class="fas fa-network-wired"></i>
+                        <span>Computer Networks</span>
+                    </a>
+                    <a href="browse.html?course=cce" class="course-link cce">
+                        <i class="fas fa-hands-helping"></i>
+                        <span>Civics & Community Engagement</span>
+                    </a>
+                    <a href="browse.html?course=vp" class="course-link vp">
+                        <i class="fas fa-paint-brush"></i>
+                        <span>Visual Programming</span>
+                    </a>
+                    <a href="browse.html?course=coal" class="course-link coal">
+                        <i class="fas fa-microchip"></i>
+                        <span>Computer Organization & Assembly Language</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -302,6 +461,7 @@
                             <li><a href="browse.html">Browse Notes</a></li>
                             <li><a href="upload.html">Upload Notes</a></li>
                             <li><a href="my-notes.html">My Notes</a></li>
+                            <li><a href="profile.html">Profile</a></li>
                         </ul>
                     </div>
                     
@@ -311,52 +471,4 @@
                             <li><a href="browse.html?course=mvc">Multi-variable Calculus</a></li>
                             <li><a href="browse.html?course=se">Software Engineering</a></li>
                             <li><a href="browse.html?course=cn">Computer Networks</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p class="copyright">
-                    &copy; 2024 NotesByRaheem.xyz. All rights reserved.
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script>
-        // Check if user is logged in
-        document.addEventListener('DOMContentLoaded', function() {
-            // Check authentication
-            const currentUser = JSON.parse(localStorage.getItem('currentUser') || sessionStorage.getItem('currentUser'));
-            
-            if (!currentUser || currentUser.role !== 'student') {
-                window.location.href = '../login.html';
-                return;
-            }
-            
-            // Update user name
-            const userNameElements = document.querySelectorAll('.user-name');
-            userNameElements.forEach(el => {
-                el.textContent = currentUser.name || 'Student User';
-            });
-            
-            // Logout functionality
-            document.getElementById('logout-btn').addEventListener('click', function() {
-                localStorage.removeItem('currentUser');
-                sessionStorage.removeItem('currentUser');
-                window.location.href = '../login.html';
-            });
-            
-            // Mobile menu toggle
-            const mobileToggle = document.querySelector('.mobile-menu-toggle');
-            const navMenu = document.querySelector('.nav-menu');
-            
-            mobileToggle.addEventListener('click', function() {
-                navMenu.classList.toggle('active');
-            });
-        });
-    </script>
-</body>
-</html>
+                            <li><a href="b

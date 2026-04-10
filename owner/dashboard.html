@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Dashboard - NotesByRaheem.xyz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/pages/owner.css">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+</head>
+<body class="owner-page">
+    <!-- Navigation Header -->
+    <header class="dashboard-header">
+        <div class="container">
+            <nav class="dashboard-nav">
+                <div class="nav-brand">
+                    <a href="../index.html" class="logo-link">
+                        <i class="fas fa-book-open logo-icon"></i>
+                        <span class="logo-text">NotesBy<span class="logo-domain">Raheem.xyz</span></span>
+                    </a>
+                </div>
+                
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li class="nav-item active">
+                            <a href="dashboard.html" class="nav-link">
+                                <i class="fas fa-crown"></i>
+                                <span>Owner Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="users.html" class="nav-link">
+                                <i class="fas fa-users"></i>
+                                <span>All Users</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="admins.html" class="nav-link">
+                                <i class="fas fa-user-shield"></i>
+                                <span>Manage Admins</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="analytics.html" class="nav-link">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Analytics</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="settings.html" class="nav-link">
+                                <i class="fas fa-sliders-h"></i>
+                                <span>System Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-user">
+                    <div class="user-dropdown">
+                        <button class="user-toggle">
+                            <div class="user-avatar owner">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <span class="user-name">Owner (Raheem)</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="profile.html" class="dropdown-item">
+                                <i class="fas fa-user"></i>
+                                <span>Profile</span>
+                            </a>
+                            <a href="settings.html" class="dropdown-item">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </a>
+                            <button id="logout-btn" class="dropdown-item logout">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Logout</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="owner-main">
+        <div class="container">
+            <div class="owner-header">
+                <h1>Owner Dashboard</h1>
+                <p>Full system control and management. Monitor platform health, manage users, and configure system settings.</p>
+            </div>
+
+            <!-- Stats Overview -->
+            <div class="owner-stats">
+                <div class="owner-stat-card users">
+                    <div class="owner-stat-icon users">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="owner-stat-content">
+                        <h3 id="total-users">156</h3>
+                        <p>Total Users</p>
+                        <div class="owner-stat-trend positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>12% this month</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="owner-stat-card notes">
+                    <div class="owner-stat-icon notes">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="owner-stat-content">
+                        <h3 id="total-notes">423</h3>
+                        <p>Total Notes</p>
+                        <div class="owner-stat-trend positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>8% this month</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="owner-stat-card admins">
+                    <div class="owner-stat-icon admins">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <div class="owner-stat-content">
+                        <h3 id="total-admins">5</h3>
+                        <p>Active Admins</p>
+                        <div class="owner-stat-trend">
+                            <span>No change</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="owner-stat-card revenue">
+                    <div class="owner-stat-icon revenue">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="owner-stat-content">
+                        <h3 id="total-revenue">$0</h3>
+                        <p>Platform Revenue</p>
+                        <div class="owner-stat-trend">
+                            <span>Free platform</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Sections -->
+            <div class="owner-dashboard">
+                <!-- Platform Overview -->
+                <div class="owner-section">
+                    <div class="owner-section-header">
+                        <h2>Platform Overview</h2>
+                        <span class="badge">Live</span>
+                    </div>
+                    <div class="owner-section-content">
+                        <div class="quick-stats">
+                            <div class="quick-stat">
+                                <h4>24</h4>
+                                <p>Active Users</p>
+                            </div>
+                            <div class="quick-stat">
+                                <h4>18</h4>
+                                <p>Notes Uploaded Today</p>
+                            </div>
+                            <div class="quick-stat">
+                                <h4>94%</h4>
+                                <p>Approval Rate</p>
+                            </div>
+                            <div class="quick-stat">
+                                <h4>2.1k</h4>
+                                <p>Page Views Today</p>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-placeholder">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>Activity chart would appear here</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Users -->
+                <div class="owner-section">
+                    <div class="owner-section-header">
+                        <h2>Recent Users</h2>
+                        <span class="badge">New</span>
+                    </div>
+                    <div class="owner-section-content">
+                        <div class="recent-users-list" id="recent-users-list">
+                            <div class="recent-user-item">
+                                <div class="user-avatar" style="background-color: #3b82f6;">
+                                    AJ
+                                </div>
+                                <div class="user-info">
+                                    <h4>Alex Johnson</h4>
+                                    <p>alex.j@example.edu</p>
+                                </div>
+                                <span class="user-role student">Student</span>
+                            </div>
+                            <div class="recent-user-item">
+                                <div class="user-avatar" style="background-color: #8b5cf6;">
+                                    SM
+                                </div>
+                                <div class="user-info">
+                                    <h4>Sarah Miller</h4>
+                                    <p>sarah.m@example.edu</p>
+                                </div>
+                                <span class="user-role admin">Admin</span>
+                            </div>
+                            <div class="recent-user-item">
+                                <div class="user-avatar" style="background-color: #10b981;">
+                                    RK
+                                </div>
+                                <div class="user-info">
+                                    <h4>Ryan Kim</h4>
+                                    <p>ryan.k@example.edu</p>
+                                </div>
+                                <span class="user-role student">Student</span>
+                            </div>
+                            <div class="recent-user-item">
+                                <div class="user-avatar" style="background-color: #f59e0b;">
+                                    EM
+                                </div>
+                                <div class="user-info">
+                                    <h4>Emma Wilson</h4>
+                                    <p>emma.w@example.edu</p>
+                                </div>
+                                <span class="user-role student">Student</span>
+                            </div>
+                            <div class="recent-user-item">
+                                <div class="user-avatar" style="background-color: #ef4444;">
+                                    DC
+                                </div>
+                                <div class="user-info">
+                                    <h4>David Chen</h4>
+                                    <p>david.c@example.edu</p>
+                                </div>
+                                <span class="user-role student">Student</span>
+                            </div>
+                        </div>
+                        <div class="text-center" style="margin-top: 1rem;">
+                            <a href="users.html" class="btn-view" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                                <i class="fas fa-list"></i> View All Users
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Health -->
+                <div class="owner-section">
+                    <div class="owner-section-header">
+                        <h2>System Health</h2>
+                        <span class="badge">Good</span>
+                    </div>
+                    <div class="owner-section-content">
+                        <div class="system-health">
+                            <div class="health-item">
+                                <div class="health-info">
+                                    <div class="health-icon good">
+                                        <i class="fas fa-server"></i>
+                                    </div>
+                                    <div class="health-text">
+                                        <h4>Server Status</h4>
+                                        <p>Web server and database</p>
+                                    </div>
+                                </div>
+                                <span class="health-status good">Operational</span>
+                            </div>
+                            <div class="health-item">
+                                <div class="health-info">
+                                    <div class="health-icon good">
+                                        <i class="fas fa-database"></i>
+                                    </div>
+                                    <div class="health-text">
+                                        <h4>Database</h4>
+                                        <p>Storage and connections</p>
+                                    </div>
+                                </div>
+                                <span class="health-status good">Healthy</span>
+                            </div>
+                            <div class="health-item">
+                                <div class="health-info">
+                                    <div class="health-icon warning">
+                                        <i class="fas fa-upload"></i>
+                                    </div>
+                                    <div class="health-text">
+                                        <h4>File Uploads</h4>
+                                        <p>Storage space remaining</p>
+                                    </div>
+                                </div>
+                                <span class="health-status warning">65% Used</span>
+                            </div>
+                            <div class="health-item">
+                                <div class="health-info">
+                                    <div class="health-icon good">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div class="health-text">
+                                        <h4>Security</h4>
+                                        <p>Firewall and protection</p>
+                                    </div>
+                                </div>
+                                <span class="health-status good">Protected</span>
+                            </div>
+                            <div class="health-item">
+                                <div class="health-info">
+                                    <div class="health-icon good">
+                                        <i class="fas fa-bolt"></i>
+                                    </div>
+                                    <div class="health-text">
+                                        <h4>Performance</h4>
+                                        <p>Response time and uptime</p>
+                                    </div>
+                                </div>
+                                <span class="health-status good">Excellent</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Owner Actions -->
+            <div class="owner-actions">
+                <div class="owner-action-btn">
+                    <div class="owner-action-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <div class="owner-action-content">
+                        <h3>Add New Admin</h3>
+                        <p>Grant admin privileges to a trusted user. Admins can approve notes and manage content.</p>
+                    </div>
+                    <button class="btn btn-primary" id="add-admin-btn">
+                        <i class="fas fa-plus"></i> Add Admin
+                    </button>
+                </div>
+                
+                <div class="owner-action-btn">
+                    <div class="owner-action-icon">
+                        <i class="fas fa-file-export"></i>
+                    </div>
+                    <div class="owner-action-content">
+                        <h3>Export Data</h3>
+                        <p>Export user data, notes, and platform statistics for backup or analysis.</p>
+                    </div>
+                    <button class="btn btn-secondary" id="export-data-btn">
+                        <i class="fas fa-download"></i> Export
+                    </button>
+                </div>
+                
+                <div class="owner-action-btn warning">
+                    <div class="owner-action-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div class="owner-action-content">
+                        <h3>Send Announcement</h3>
+                        <p>Send a platform-wide announcement to all users about updates or important information.</p>
+                    </div>
+                    <button class="btn btn-warning" id="send-announcement-btn">
+                        <i class="fas fa-bullhorn"></i> Send
+                    </button>
+                </div>
+                
+                <div class="owner-action-btn danger">
+                    <div class="owner-action-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="owner-action-content">
+                        <h3>System Maintenance</h3>
+                        <p>Schedule or perform system maintenance, updates, or emergency procedures.</p>
+                    </div>
+                    <button class="btn btn-danger" id="maintenance-btn">
+                        <i class="fas fa-tools"></i> Maintenance
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="../index.html" class="footer-logo">
+                        <i class="fas fa-book-open"></i>
+                        <span>NotesBy<span class="logo-domain">Raheem.xyz</span></span>
+                    </a>
+                    <p class="footer-tagline">Owner Panel - Full System Control</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Owner</h4>
+                        <ul>
+                            <li><a href="dashboard.html">Dashboard</a></li>
+                            <li><a href="users.html">All Users</a></li>
+                            <li><a href="admins.html">Manage Admins</a></li>
+                            <li><a href="analytics.html">Analytics</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>Platform</h4>
+                        <ul>
+                            <li><a href="../admin/dashboard.html">Admin Panel</a></li>
+                            <li><a href="../student/dashboard.html">Student Panel</a></li>
+                            <li><a href="../index.html">Public Website</a></li>
+                            <li><a href="#">System Status</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Data Processing</a></li>
+                            <li><a href="#">Compliance</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 NotesByRaheem.xyz - Owner Panel v1.0 | System: Online | Uptime: 99.8%</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Check authentication
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simulate authentication check
+            const currentUser = JSON.parse(localStorage.getItem('currentUser') || sessionStorage.getItem('currentUser'));
+            
+            if (!currentUser || currentUser.role !== 'owner') {
+                window.location.href = '../login.html';
+                return;
+            }
+            
+            // Update user name in header
+            const userNameElement = document.querySelector('.user-name');
+            if (userNameElement && currentUser.name) {
+                userNameElement.textContent = currentUser.name;
+            }
+            
+            // Initialize owner functionality
+            initOwnerDashboard();
+        });
+
+        function initOwnerDashboard() {
+            // Load stats
+            updateOwnerStats();
+            
+            // Button event listeners
+            document.getElementById('add-admin-btn').addEventListener('click', () => {
+                alert('Add admin feature would open a user selection interface.');
+            });
+            
+            document.getElementById('export-data-btn').addEventListener('click', () => {
+                alert('Data export would generate and download CSV/JSON files.');
+            });
+            
+            document.getElementById('send-announcement-btn').addEventListener('click', () => {
+                alert('Announcement feature would open a message composer.');
+            });
+            
+            document.getElementById('maintenance-btn').addEventListener('click', () => {
+                if (confirm('Are you sure you want to enter maintenance mode? This will temporarily disable the platform for all users.')) {
+                    alert('Maintenance mode would be activated. (Simulated)');
+                }
+            });
+            
+            // Logout button
+            document.getElementById('logout-btn').addEventListener('click', () => {
+                localStorage.removeItem('currentUser');
+                sessionStorage.removeItem('currentUser');
+                window.location.href = '../login.html';
+            });
+        }
+        
+        function updateOwnerStats() {
+            // In a real app, this would fetch from an API
+            // For now, we'll simulate with localStorage data
+            const notes = JSON.parse(localStorage.getItem('studentNotes') || '[]');
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            
+            // Count different types of users
+            const studentCount = users.filter(user => user.role === 'student').length;
+            const adminCount = users.filter(user => user.role === 'admin').length;
+            const ownerCount = users.filter(user => user.role === 'owner').length;
+            const totalUsers = studentCount + adminCount + ownerCount;
+            
+            // Update UI
+            document.getElementById('total-users').textContent = totalUsers || 156;
+            document.getElementById('total-notes').textContent = notes.length || 423;
+            document.getElementById('total-admins').textContent = adminCount || 5;
+        }
+    </script>
+</body>
+</html>

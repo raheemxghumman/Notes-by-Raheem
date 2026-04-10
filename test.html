@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test User Flows - NotesByRaheem.xyz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <style>
+        .test-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .test-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .test-header h1 {
+            color: #3b82f6;
+            margin-bottom: 0.5rem;
+        }
+        
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .test-card {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .test-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .test-card h3 {
+            color: #1e293b;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .test-card p {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .test-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .test-btn {
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            border: none;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+        }
+        
+        .test-btn.primary {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .test-btn.primary:hover {
+            background: #2563eb;
+        }
+        
+        .test-btn.secondary {
+            background: #f1f5f9;
+            color: #475569;
+            border: 1px solid #cbd5e1;
+        }
+        
+        .test-btn.secondary:hover {
+            background: #e2e8f0;
+        }
+        
+        .test-btn.success {
+            background: #10b981;
+            color: white;
+        }
+        
+        .test-btn.success:hover {
+            background: #059669;
+        }
+        
+        .test-btn.warning {
+            background: #f59e0b;
+            color: white;
+        }
+        
+        .test-btn.warning:hover {
+            background: #d97706;
+        }
+        
+        .test-results {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .test-results h3 {
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+        
+        #test-output {
+            font-family: 'Courier New', monospace;
+            background: #1e293b;
+            color: #f1f5f9;
+            padding: 1rem;
+            border-radius: 6px;
+            min-height: 100px;
+            max-height: 300px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            font-size: 0.9rem;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+        
+        .status-success {
+            background: #10b981;
+        }
+        
+        .status-error {
+            background: #ef4444;
+        }
+        
+        .status-warning {
+            background: #f59e0b;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-header">
+            <h1><i class="fas fa-vial"></i> Test User Flows</h1>
+            <p>Test the complete authentication and workflow system for NotesByRaheem.xyz</p>
+        </div>
+        
+        <div class="test-grid">
+            <!-- Student Flow -->
+            <div class="test-card">
+                <h3><i class="fas fa-user-graduate"></i> Student Flow</h3>
+                <p>Test the complete student journey: login → dashboard → browse notes → upload notes → logout.</p>
+                <div class="test-actions">
+                    <button class="test-btn primary" id="test-student-login">
+                        <i class="fas fa-sign-in-alt"></i> Test Student Login
+                    </button>
+                    <button class="test-btn secondary" id="test-student-dashboard">
+                        <i class="fas fa-tachometer-alt"></i> Go to Student Dashboard
+                    </button>
+                    <button class="test-btn secondary" id="test-student-upload">
+                        <i class="fas fa-upload"></i> Test Note Upload
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Admin Flow -->
+            <div class="test-card">
+                <h3><i class="fas fa-user-shield"></i> Admin Flow</h3>
+                <p>Test admin functionality: login → review pending notes → approve/reject → view reports.</p>
+                <div class="test-actions">
+                    <button class="test-btn warning" id="test-admin-login">
+                        <i class="fas fa-sign-in-alt"></i> Test Admin Login
+                    </button>
+                    <button class="test-btn secondary" id="test-admin-dashboard">
+                        <i class="fas fa-tachometer-alt"></i> Go to Admin Dashboard
+                    </button>
+                    <button class="test-btn secondary" id="test-admin-approval">
+                        <i class="fas fa-check-circle"></i> Test Note Approval
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Owner Flow -->
+            <div class="test-card">
+                <h3><i class="fas fa-crown"></i> Owner Flow</h3>
+                <p>Test owner functionality: login → view system stats → manage users → system settings.</p>
+                <div class="test-actions">
+                    <button class="test-btn success" id="test-owner-login">
+                        <i class="fas fa-sign-in-alt"></i> Test Owner Login
+                    </button>
+                    <button class="test-btn secondary" id="test-owner-dashboard">
+                        <i class="fas fa-tachometer-alt"></i> Go to Owner Dashboard
+                    </button>
+                    <button class="test-btn secondary" id="test-owner-stats">
+                        <i class="fas fa-chart-bar"></i> Test System Stats
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Data Management -->
+            <div class="test-card">
+                <h3><i class="fas fa-database"></i> Data Management</h3>
+                <p>Initialize test data, clear storage, and verify data persistence across sessions.</p>
+                <div class="test-actions">
+                    <button class="test-btn primary" id="init-test-data">
+                        <i class="fas fa-plus-circle"></i> Initialize Test Data
+                    </button>
+                    <button class="test-btn secondary" id="clear-storage">
+                        <i class="fas fa-trash"></i> Clear Local Storage
+                    </button>
+                    <button class="test-btn secondary" id="check-auth-status">
+                        <i class="fas fa-check"></i> Check Auth Status
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-results">
+            <h3><i class="fas fa-clipboard-check"></i> Test Results</h3>
+            <div id="test-output">Click any test button to see results here...</div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="index.html" class="test-btn secondary">
+                <i class="fas fa-home"></i> Back to Home
+            </a>
+            <a href="login.html" class="test-btn primary">
+                <i class="fas fa-sign-in-alt"></i> Go to Login Page
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Output function
+        function logTest(message, type = 'info') {
+            const output = document.getElementById('test-output');
+            const timestamp = new Date().toLocaleTimeString();
+            const typeIcon = {
+                'info': 'ℹ️',
+                'success': '✅',
+                'error': '❌',
+                'warning': '⚠️'
+            }[type] || 'ℹ️';
+            
+            const newLine = `[${timestamp}] ${typeIcon} ${message}\n`;
+            output.textContent = newLine + output.textContent;
+        }
+        
+        // Initialize test data
+        document.getElementById('init-test-data').addEventListener('click', () => {
+            logTest('Initializing test data...', 'info');
+            
+            // Create test users
+            const testUsers = [
+                {
+                    id: 1,
+                    username: 'student1',
+                    password: 'password123',
+                    name: 'John Doe',
+                    email: 'john@example.edu',
+                    role: 'student',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 2,
+                    username: 'admin1',
+                    password: 'admin123',
+                    name: 'Admin User',
+                    email: 'admin@notesbyraheem.xyz',
+                    role: 'admin',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 3,
+                    username: 'owner',
+                    password: 'owner123',
+                    name: 'Raheem (Owner)',
+                    email: 'raheem@notesbyraheem.xyz',
+                    role: 'owner',
+                    createdAt: new Date().toISOString()
+                }
+            ];
+            
+            localStorage.setItem('users', JSON.stringify(testUsers));
+            
+            // Create test notes
+            const testNotes = [
+                {
+                    id: 1001,
+                    title: 'Calculus 101 - Derivatives',
+                    course: 'mvc',
+                    description: 'Complete notes on derivatives with examples',
+                    author: 'John Doe',
+                    authorId: 1,
+                    status: 'approved',
+                    uploadedAt: '2023-10-15T10:30:00Z',
+                    approvedAt: '2023-10-15T14:45:00Z',
+                    approvedBy: 'Admin User',
+                    downloads: 42,
+                    views: 156,
+                    rating: 4.5
+                },
+                {
+                    id: 1002,
+                    title: 'Software Engineering Basics',
+                    course: 'se',
+                    description: 'Introduction to software engineering principles',
+                    author: 'Sarah Johnson',
+                    authorId: 4,
+                    status: 'pending',
+                    uploadedAt: new Date().toISOString(),
+                    approvedAt: null,
+                    approvedBy: null,
+                    downloads: 0,
+                    views: 12,
+                    rating: 0
+                },
+                {
+                    id: 1003,
+                    title: 'Network Protocols',
+                    course: 'cn',
+                    description: 'Overview of TCP/IP and other network protocols',
+                    author: 'Mike Chen',
+                    authorId: 5,
+                    status: 'approved',
+                    uploadedAt: '2023-10-10T09:15:00Z',
+                    approvedAt: '2023-10-10T11:30:00Z',
+                    approvedBy: 'Admin User',
+                    downloads: 28,
+                    views: 89,
+                    rating: 4.2
+                }
+            ];
+            
+            localStorage.setItem('studentNotes', JSON.stringify(testNotes));
+            
+            logTest('Test data initialized successfully!', 'success');
+            logTest(`- Created ${testUsers.length} test users`, 'info');
+            logTest(`- Created ${testNotes.length} test notes`, 'info');
+        });
+        
+        // Clear storage
+        document.getElementById('clear-storage').addEventListener('click', () => {
+            localStorage.clear();
+            sessionStorage.clear();
+            logTest('Local storage and session storage cleared.', 'success');
+        });
+        
+        // Check auth status
+        document.getElementById('check-auth-status').addEventListener('click', () => {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser') || sessionStorage.getItem('currentUser'));
+            
+            if (currentUser) {
+                logTest(`Currently logged in as: ${currentUser.name} (${currentUser.role})`, 'success');
+                logTest(`Username: ${currentUser.username}, Email: ${currentUser.email || 'N/A'}`, 'info');
+            } else {
+                logTest('No user is currently logged in.', 'warning');
+            }
+            
+            // Check for test data
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            const notes = JSON.parse(localStorage.getItem('studentNotes') || '[]');
+            
+            logTest(`Found ${users.length} users in storage`, 'info');
+            logTest(`Found ${notes.length} notes in storage`, 'info');
+        });
+        
+        // Student login test
+        document.getElementById('test-student-login').addEventListener('click', () => {
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            const student = users.find(u => u.role === 'student');
+            
+            if (student) {
+                // Simulate login
+                localStorage.setItem('currentUser', JSON.stringify(student));
+                logTest(`Student login successful: ${student.name}`, 'success');
+                logTest(`Redirecting to student dashboard...`, 'info');
+                
+                // Redirect after a short delay
+                setTimeout(() => {
+                    window.location.href = 'student/dashboard.html';
+                }, 1000);
+            } else {
+                logTest('No test student found. Please initialize test data first.', 'error');
+            }
+        });
+        
+        // Admin login test
+        document.getElementById('test-admin-login').addEventListener('click', () => {
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            const admin = users.find(u => u.role === 'admin');
+            
+            if (admin) {
+                // Simulate login
+                localStorage.setItem('currentUser', JSON.stringify(admin));
+                logTest(`Admin login successful: ${admin.name}`, 'success');
+                logTest(`Redirecting to admin dashboard...`, 'info');
+                
+                // Redirect after a short delay
+                setTimeout(() => {
+                    window.location.href = 'admin/dashboard.html';
+                }, 1000);
+            } else {
+                logTest('No test admin found. Please initialize test data first.', 'error');
+            }
+        });
+        
+        // Owner login test
+        document.getElementById('test-owner-login').addEventListener('click', () => {
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            const owner = users.find(u => u.role === 'owner');
+            
+            if (owner) {
+                // Simulate login
+                localStorage.setItem('currentUser', JSON.stringify(owner));
+                logTest(`Owner login successful: ${owner.name}`, 'success');
+                logTest(`Redirecting to owner dashboard...`, 'info');
+                
+                // Redirect after a short delay
+                setTimeout(() => {
+                    window.location.href = 'owner/dashboard.html';
+                }, 1000);
+            } else {
+                logTest('No test owner found. Please initialize test data first.', 'error');
+            }
+        });
+        
+        // Navigation buttons
+        document.getElementById('test-student-dashboard').addEventListener('click', () => {
+            window.location.href = 'student/dashboard.html';
+        });
+        
+        document.getElementById('test-student-upload').addEventListener('click', () => {
+            window.location.href = 'student/upload.html';
+        });
+        
+        document.getElementById('test-admin-dashboard').addEventListener('click', () => {
+            window.location.href = 'admin/dashboard.html';
+        });
+        
+        document.getElementById('test-admin-approval').addEventListener('click', () => {
+            window.location.href = 'admin/dashboard.html';
+        });
+        
+        document.getElementById('test-owner-dashboard').addEventListener('click', () => {
+            window.location.href = 'owner/dashboard.html';
+        });
+        
+        document.getElementById('test-owner-stats').addEventListener('click', () => {
+            window.location.href = 'owner/dashboard.html';
+        });
+        
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            logTest('Test page loaded. Click "Initialize Test Data" to set up test users and notes.', 'info');
+        });
+    </script>
+</body>
+</html>
